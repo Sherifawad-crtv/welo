@@ -32,7 +32,7 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 @media (display-mode: standalone) { .hero-in > .fake-status { display: none !important; } }
 
 /* Hero */
-.hero { background: var(--green); height: calc(352px + var(--safe-top)); position: relative; color: #fff; text-align: center; }
+.hero { background: var(--green); height: calc(372px + var(--safe-top)); position: relative; color: #fff; text-align: center; }
 .hero-in { position: absolute; left: 0; right: 0; bottom: 0; top: var(--safe-top); }
 .hero-in > * { position: absolute; }
 .clock { left: 45px; top: 12px; font-weight: 500; font-size: 18px; line-height: 24px; }
@@ -66,7 +66,7 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .goal-text { left: 0; right: 0; top: 291px; font-size: 16px; line-height: 20px; letter-spacing: .7px; opacity: .6; }
 
 /* Sheet */
-.sheet { margin-top: -20px; background: var(--cream); border-radius: 36px 36px 0 0; padding: 20px 20px 0; position: relative; }
+.sheet { margin-top: -40px; background: var(--cream); border-radius: 36px 36px 0 0; padding: 20px 20px 0; position: relative; }
 .h2 { font-family: var(--display); font-size: 26px; line-height: 30px; font-weight: 700; color: var(--ink); margin: 21px 0 11px; letter-spacing: -.4px; }
 .h2.first { margin: 4px 0 12px; }
 .entry { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid #e1ddcc; }
