@@ -1,11 +1,11 @@
 import { Chevron, InfoIcon, ProfileIcon, FakeStatusBar } from './Icons.jsx';
 
-export default function Hero({ summary }) {
+export default function Hero({ summary, onProfile }) {
   return (
     <header className="hero">
       <div className="hero-in">
         <FakeStatusBar />
-        <button className="circle tb2 left" aria-label="Profile"><ProfileIcon /></button>
+        <button className="circle tb2 left" aria-label="Profile" onClick={onProfile}><ProfileIcon /></button>
         <button className="circle tb2 right" aria-label="About"><InfoIcon /></button>
 
         <div className="date-row tb1">
