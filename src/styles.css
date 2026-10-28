@@ -11,14 +11,14 @@
 * { box-sizing: border-box; scrollbar-width: none; }
 *::-webkit-scrollbar { display: none; }
 html, body, #root { height: 100%; }
-html { background: var(--card); -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
-body { margin: 0; font-family: Roboto, system-ui, sans-serif; background: var(--card); overscroll-behavior: none; }
+html { background: var(--cream); -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; font-family: Roboto, system-ui, sans-serif; background: var(--cream); overscroll-behavior: none; }
 button { font: inherit; color: inherit; border: 0; padding: 0; background: none; cursor: pointer; }
 
 /* Mobile: the app IS the screen */
 .outer { height: 100%; }
 .frame { position: fixed; inset: 0; background: var(--cream); overflow: hidden; }
-.scroll { position: absolute; inset: 0; overflow: auto; padding-bottom: calc(110px + var(--safe-bottom)); }
+.scroll { position: absolute; inset: 0; overflow: auto; padding-bottom: calc(100px + var(--nav-bottom)); }
 .hero-in > .fake-status { display: none; }
 
 /* Desktop: framed mockup */
@@ -85,8 +85,9 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .macro-value { font-size: 26px; line-height: 32px; font-weight: 500; color: var(--ink); margin-top: 12px; white-space: nowrap; }
 .macro-value.water { color: #2a6f97; }
 
-/* Bottom nav: full-width native tab bar, flush with the bottom edge */
-.nav { position: absolute; left: 0; right: 0; bottom: 0; height: calc(73px + var(--safe-bottom)); padding-bottom: var(--safe-bottom); border-radius: 28px 28px 0 0; background: var(--card); box-shadow: 0 -4px 24px rgba(0,0,0,.08); display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; }
+/* Bottom nav: floating pill, kept low like a native tab bar */
+:root { --nav-bottom: max(10px, calc(var(--safe-bottom) - 14px)); }
+.nav { position: absolute; left: 64px; right: 64px; bottom: var(--nav-bottom); height: 73px; border-radius: 37px; background: var(--card); box-shadow: 0 8px 28px rgba(0,0,0,.1); display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; }
 .nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; height: 73px; font-size: 16px; color: #6b6e63; }
 .nav-item.active { color: var(--green); font-weight: 500; }
-.fab { position: absolute; left: 50%; margin-left: -28px; bottom: calc(16px + var(--safe-bottom)); width: 56px; height: 56px; border-radius: 28px; background: var(--green); display: grid; place-items: center; box-shadow: 0 10px 20px rgba(31,114,75,.35); }
+.fab { position: absolute; left: 50%; margin-left: -28px; bottom: calc(var(--nav-bottom) + 16px); width: 56px; height: 56px; border-radius: 28px; background: var(--green); display: grid; place-items: center; box-shadow: 0 10px 20px rgba(31,114,75,.35); }
