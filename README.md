@@ -25,3 +25,7 @@ Phones: the app fills the screen, with safe-area insets at the top and inside th
 ## Deploy on Vercel
 
 Import the repo, framework preset **Vite** (auto-detected). Test the install on the HTTPS URL: Add to Home Screen, then launch from the icon. A regular browser tab keeps its own toolbar, which the page can't draw over.
+
+## Icons
+
+[Solar icon set](https://icon-sets.iconify.design/solar/) (CC BY 4.0). Run `node scripts/gen-icons.mjs` after adding a name to its list to regenerate `src/solarIcons.js`, then use `<Sol name="..." />`.

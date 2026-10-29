@@ -1,10 +1,10 @@
 export const summary = { deficit: '−2,256', resting: '2,308', eaten: '675', active: '623' };
 
 export const entries = [
-  { id: 'baseline', icon: '🌙', tint: '#e8e5d3', title: 'Baseline', sub: 'Just being you', value: '−2,308', time: 'All day', muted: true },
-  { id: 'charco', icon: '🍽️', tint: '#dfebe2', title: 'Charco Chicken Smoked/Grilled', sub: 'Food', value: '+667', time: '3:48 PM', tone: 'in', ellipsis: true },
-  { id: 'workout', icon: '🏋️', tint: '#fbe3e8', title: 'تمارين جسم قوة, جري', sub: 'Movement', value: '−623', time: '2:24 PM', tone: 'out', rtl: true },
-  { id: 'coffee', icon: '🥤', tint: '#dfebe2', title: 'Coffee', sub: 'Food', value: '+8', time: '2:24 PM', tone: 'in' },
+  { id: 'baseline', icon: 'moon-linear', tint: '#e8e5d3', color: '#5c5f52', title: 'Baseline', sub: 'Just being you', value: '−2,308', time: 'All day', muted: true },
+  { id: 'charco', icon: 'plate-linear', tint: '#dfebe2', color: '#1f724b', title: 'Charco Chicken Smoked/Grilled', sub: 'Food', value: '+667', time: '3:48 PM', tone: 'in', ellipsis: true },
+  { id: 'workout', icon: 'dumbbell-large-minimalistic-linear', tint: '#fbe3e8', color: '#a3213f', title: 'تمارين جسم قوة, جري', sub: 'Movement', value: '−623', time: '2:24 PM', tone: 'out', rtl: true },
+  { id: 'coffee', icon: 'cup-hot-linear', tint: '#dfebe2', color: '#1f724b', title: 'Coffee', sub: 'Food', value: '+8', time: '2:24 PM', tone: 'in' },
 ];
 
 export const macros = [
@@ -55,22 +55,22 @@ export const entryDetails = {
 
 export const settingsGroups = [
   { title: 'Your body', hint: 'Your goal: lose weight. It follows from your weight and target, and your daily numbers update when you change any of these.', rows: [
-    { icon: '⚖️', tint: '#dfebe2', label: 'Weight', value: '96 kg' },
-    { icon: '🎯', tint: '#dfebe2', label: 'Target weight', value: '87 kg' },
-    { icon: '📏', tint: '#e8e5d3', label: 'Height', value: '178 cm' },
-    { icon: '🎂', tint: '#e8e5d3', label: 'Age', value: '29 years' },
-    { icon: '👦', tint: '#e8e5d3', label: 'Gender', value: 'Male' },
+    { icon: 'scale-linear', tint: '#dfebe2', label: 'Weight', value: '96 kg' },
+    { icon: 'target-linear', tint: '#dfebe2', label: 'Target weight', value: '87 kg' },
+    { icon: 'ruler-linear', tint: '#e8e5d3', label: 'Height', value: '178 cm' },
+    { icon: 'calendar-linear', tint: '#e8e5d3', label: 'Age', value: '29 years' },
+    { icon: 'user-circle-linear', tint: '#e8e5d3', label: 'Gender', value: 'Male' },
   ] },
-  { title: 'Logging', rows: [{ icon: '📸', tint: '#dfebe2', label: 'Preferred way to log', value: 'Photo' }] },
+  { title: 'Logging', rows: [{ icon: 'camera-linear', tint: '#dfebe2', label: 'Preferred way to log', value: 'Photo' }] },
   { title: 'Account', rows: [
-    { icon: '🔔', tint: '#dfebe2', label: 'Notifications', value: 'On' },
-    { icon: '🔒', tint: '#e8e5d3', label: 'Privacy & security' },
+    { icon: 'bell-linear', tint: '#dfebe2', label: 'Notifications', value: 'On' },
+    { icon: 'lock-linear', tint: '#e8e5d3', label: 'Privacy & security' },
   ] },
   { title: 'About', rows: [
-    { icon: '📄', tint: '#e8e5d3', label: 'Terms of service' },
-    { icon: '🛡️', tint: '#e8e5d3', label: 'Privacy policy' },
-    { icon: '🙏', tint: '#e8e5d3', label: 'Credits' },
-    { icon: '✉️', tint: '#e8e5d3', label: 'Contact us' },
+    { icon: 'document-text-linear', tint: '#e8e5d3', label: 'Terms of service' },
+    { icon: 'shield-check-linear', tint: '#e8e5d3', label: 'Privacy policy' },
+    { icon: 'heart-linear', tint: '#e8e5d3', label: 'Credits' },
+    { icon: 'letter-linear', tint: '#e8e5d3', label: 'Contact us' },
   ] },
 ];
 export const profile = { name: 'Sherif Awad', email: 'sherif.awaadd@gmail.com' };
