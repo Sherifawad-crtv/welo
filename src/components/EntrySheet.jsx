@@ -1,4 +1,5 @@
-import { ChevronDown, CloseIcon, DescribeIcon, InfoSmall, Mascot, PencilIcon, TrashIcon } from './Icons.jsx';
+import mascot from '../assets/mascot-male.png';
+import { ChevronDown, CloseIcon, DescribeIcon, InfoSmall, PencilIcon, TrashIcon } from './Icons.jsx';
 
 export default function EntrySheet({ detail, onClose }) {
   return (
@@ -6,7 +7,7 @@ export default function EntrySheet({ detail, onClose }) {
       <div className="esheet" onClick={(e) => e.stopPropagation()} role="dialog" aria-label="Entry details">
         <button className="handle" onClick={onClose} aria-label="Close"><i /></button>
         <div className="e-time">{detail.time}</div>
-        <div className="e-mascot"><Mascot /></div>
+        <img className="e-mascot" src={mascot} alt="" />
         <div className="e-total">
           <div className="e-kcal"><b>{detail.kcal}</b><span>kcal</span></div>
           <div className="e-macros">{detail.macros}</div>

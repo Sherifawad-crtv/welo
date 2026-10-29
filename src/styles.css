@@ -148,8 +148,8 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .handle { display: block; margin: 0 auto; width: 80px; height: 24px; padding-top: 10px; }
 .handle i { display: block; margin: 0 auto; width: 37px; height: 4px; border-radius: 2px; background: #c9c6b5; }
 .e-time { position: absolute; left: 20px; top: 38px; font-family: var(--display); font-size: 26px; line-height: 30px; font-weight: 700; color: var(--ink); }
-.e-mascot { position: absolute; right: 22px; top: 40px; z-index: 1; line-height: 0; }
-.e-total { margin-top: 85px; padding: 14px 20px 18px; border-radius: var(--r-card); background: #dfebe2; position: relative; }
+.e-mascot { position: absolute; right: 26px; top: 38px; width: 96px; height: auto; z-index: 0; }
+.e-total { margin-top: 85px; padding: 14px 20px 18px; border-radius: var(--r-card); background: #dfebe2; position: relative; z-index: 1; }
 .e-kcal { display: flex; align-items: baseline; gap: 8px; color: var(--ink); }
 .e-kcal b { font-family: var(--display); font-size: 60px; line-height: 70px; font-weight: 800; letter-spacing: -1.5px; }
 .e-kcal span { font-family: var(--display); font-size: 24px; font-weight: 700; }
