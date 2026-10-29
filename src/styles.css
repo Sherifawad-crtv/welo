@@ -71,7 +71,7 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .entry { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid #e1ddcc; }
 .entry:last-child { border-bottom: 0; }
 .entry-icon { width: 44px; height: 44px; display: grid; place-items: center; flex: none; }
-.entry-icon img { max-width: 40px; max-height: 40px; width: auto; height: auto; object-fit: contain; }
+.entry-icon img { max-width: calc(40px * var(--s, 1)); max-height: calc(40px * var(--s, 1)); width: auto; height: auto; object-fit: contain; }
 .entry-main { flex: 1; min-width: 0; }
 .entry-end { text-align: right; flex: none; }
 .entry-title, .entry-value { font-size: 20px; line-height: 24px; font-weight: 500; color: var(--ink); }
