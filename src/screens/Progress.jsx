@@ -13,13 +13,18 @@ function Segmented({ value, onChange }) {
   );
 }
 
+const fmtSigned = (n) => `${n > 0 ? '+' : '−'}${Math.abs(n).toLocaleString('en-US')}`;
+const counted = weekDays.filter((d) => d.v !== null);
+const weekTotal = counted.reduce((t, d) => t + d.v, 0);
+const weekAvg = counted.length ? Math.round(weekTotal / counted.length) : 0;
+
 function WeekHero() {
   return (
     <>
       <div className="p-row"><button className="circle" aria-label="Previous"><Chevron dir="left" /></button><div className="today wide">Last 7 days</div><button className="circle faint" disabled aria-label="Next"><Chevron dir="right" dim /></button></div>
-      <div className="p-label" style={{ top: 'calc(var(--lead) + 120px)' }}>Surplus this week</div>
-      <div className="p-number" style={{ top: 'calc(var(--lead) + 142px)' }}>+192</div>
-      <div className="p-sub" style={{ top: 'calc(var(--lead) + 198px)' }}>kcal across 1 day</div>
+      <div className="p-label" style={{ top: 'calc(var(--lead) + 120px)' }}>{weekTotal > 0 ? 'Surplus' : 'Deficit'} this week</div>
+      <div className="p-number" style={{ top: 'calc(var(--lead) + 142px)' }}>{fmtSigned(weekTotal)}</div>
+      <div className="p-sub" style={{ top: 'calc(var(--lead) + 198px)' }}>kcal across {counted.length} {counted.length === 1 ? 'day' : 'days'}</div>
     </>
   );
 }
@@ -59,13 +64,13 @@ function WeekBody({ onStreak }) {
         <div className="baseline" />
         {weekDays.map((d, i) => (
           <div className="col" key={i} style={{ left: 14.5 + i * 51 }}>
-            {d.v ? <div className="bar" /> : <div className="ghost" />}
+            {d.v === null ? <div className="ghost" /> : <div className={`bar ${d.v > 0 ? 'up' : 'down'}`} style={{ height: Math.min(44, Math.max(8, Math.abs(d.v) * 0.07)) }} />}
             <div className={`dl${d.today ? ' now' : ''}`}>{d.l}</div>
           </div>
         ))}
       </div>
       <div className="two">
-        <div className="card stat-card"><div className="sc-label">Average a day</div><div className="sc-value">+192</div></div>
+        <div className="card stat-card"><div className="sc-label">Average a day</div><div className="sc-value">{fmtSigned(weekAvg)}</div></div>
         <div className="card stat-card"><div className="sc-label">Your goal</div><div className="sc-value">−500 a day</div></div>
       </div>
       <h2 className="h2">Days</h2>

@@ -15,18 +15,23 @@ export const macros = [
 ];
 
 export const weekDays = [
-  { n: 'THU', l: 'T', v: null }, { n: 'FRI', l: 'F', v: null }, { n: 'SAT', l: 'S', v: null },
-  { n: 'SUN', l: 'S', v: 192, s: 'logged' }, { n: 'MON', l: 'M', v: null }, { n: 'TUE', l: 'T', v: null }, { n: 'WED', l: 'W', v: null, today: true, s: 'streak' },
+  { n: 'THU', l: 'T', v: -640, s: 'logged' },
+  { n: 'FRI', l: 'F', v: null },
+  { n: 'SAT', l: 'S', v: -520, s: 'streak' },
+  { n: 'SUN', l: 'S', v: 192, s: 'streak' },
+  { n: 'MON', l: 'M', v: -410, s: 'streak' },
+  { n: 'TUE', l: 'T', v: -380, s: 'streak' },
+  { n: 'WED', l: 'W', v: null, today: true, s: 'streak' },
 ];
 
 export const dayRows = [
   { d: '28', m: 'Oct', name: 'Wednesday', sub: 'Today · in progress', value: '−1,848', note: 'so far', tint: '#e8e5d3', muted: true },
-  { d: '27', m: 'Oct', name: 'Tuesday', sub: 'Nothing logged', note: 'Not counted', tint: '#e8e5d3' },
-  { d: '26', m: 'Oct', name: 'Monday', sub: 'Nothing logged', note: 'Not counted', tint: '#e8e5d3' },
+  { d: '27', m: 'Oct', name: 'Tuesday', sub: 'Ate 2,100', value: '−380', tint: '#dfebe2' },
+  { d: '26', m: 'Oct', name: 'Monday', sub: 'Ate 2,050', value: '−410', tint: '#dfebe2' },
   { d: '25', m: 'Oct', name: 'Sunday', sub: 'Ate 2,512', value: '+192', tint: '#dfebe2' },
-  { d: '24', m: 'Oct', name: 'Saturday', sub: 'Nothing logged', note: 'Not counted', tint: '#e8e5d3' },
+  { d: '24', m: 'Oct', name: 'Saturday', sub: 'Ate 1,990', value: '−520', tint: '#dfebe2' },
   { d: '23', m: 'Oct', name: 'Friday', sub: 'Nothing logged', note: 'Not counted', tint: '#e8e5d3' },
-  { d: '22', m: 'Oct', name: 'Thursday', sub: 'Nothing logged', note: 'Not counted', tint: '#e8e5d3' },
+  { d: '22', m: 'Oct', name: 'Thursday', sub: 'Ate 1,740', value: '−640', tint: '#dfebe2' },
 ];
 
 export const weighGrid = ['97', '96.5', '96', '95.5', '95'];
@@ -87,7 +92,7 @@ export const profile = { name: 'Sherif Awad', email: 'sherif.awaadd@gmail.com' }
 
 // Days with something logged, and the days that make up the running streak, by month.
 export const streak = {
-  days: 1,
-  logged: { '2026-10': [25, 28] },
-  current: { '2026-10': [28] },
+  days: 5,
+  logged: { '2026-10': [22, 24, 25, 26, 27, 28] },
+  current: { '2026-10': [24, 25, 26, 27, 28] },
 };
