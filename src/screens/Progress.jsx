@@ -82,6 +82,9 @@ function AvgChart() {
       <div className="avg-head">{headline}</div>
       <div className="avg-num">{fmtSigned(weekAvg)}<small> kcal a day</small></div>
       {[0, 1, 2, 3, 4].map((g) => <i className="avg-grid" key={g} style={{ top: PLOT_TOP + (g * PLOT_H) / 4 }} />)}
+      <i className="avg-solid" style={{ top: avgY - 1, left: 14, width: lastX - 14 }} />
+      <i className="avg-dash" style={{ top: avgY - 1, left: lastX, right: 62 }} />
+      <span className="avg-tag" style={{ top: avgY - 10 }}>Avg.</span>
       {weekDays.map((d, i) => (
         <div className="col" key={i} style={{ left: 14.5 + i * COL }}>
           {d.v !== null && (
@@ -93,9 +96,6 @@ function AvgChart() {
           <div className={`dl${d.today ? ' now' : ''}`} style={{ top: PLOT_TOP + PLOT_H + 14 }}>{d.l}</div>
         </div>
       ))}
-      <i className="avg-solid" style={{ top: avgY - 1, left: 14, width: lastX - 14 }} />
-      <i className="avg-dash" style={{ top: avgY - 1, left: lastX, right: 62 }} />
-      <span className="avg-tag" style={{ top: avgY - 10 }}>Avg.</span>
       <div className="avg-foot">Smiles mean you hit your goal · swing ±{sd} kcal</div>
     </div>
   );
