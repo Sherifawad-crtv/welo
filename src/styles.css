@@ -210,3 +210,15 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .nav-item.active { background: #fff; color: var(--green); }
 .nav-item.add { width: 58px; justify-self: center; background: var(--green); color: #fff; }
 @media (min-width: 481px) { .nav { position: absolute; } }
+
+/* Add menu: buttons bloom out of the + button */
+.nav { z-index: 30; }
+.scrim { position: fixed; inset: 0; z-index: 20; background: rgba(27,61,44,.35); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.scrim.open { opacity: 1; pointer-events: auto; }
+@media (min-width: 481px) { .scrim { position: absolute; } }
+.plus { display: grid; place-items: center; transition: transform .25s cubic-bezier(.2,.8,.2,1); }
+.nav.open .plus { transform: rotate(45deg); }
+.dial { position: absolute; left: calc(50% - 27px); top: calc(50% - 27px); width: 54px; display: flex; flex-direction: column; align-items: center; opacity: 0; pointer-events: none; transform: translate(0, 0) scale(.3); transition: transform .28s cubic-bezier(.2,.9,.3,1.25), opacity .18s ease; }
+.nav.open .dial { opacity: 1; pointer-events: auto; transform: translate(var(--x), var(--y)) scale(1); }
+.dial-btn { width: 54px; height: 54px; border-radius: 27px; background: var(--card); color: var(--green); display: grid; place-items: center; }
+.dial span { margin-top: 4px; font-size: 14px; line-height: 18px; color: #fff; letter-spacing: .3px; white-space: nowrap; }
