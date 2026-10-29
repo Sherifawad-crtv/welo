@@ -55,22 +55,22 @@ export const entryDetails = {
 
 export const settingsGroups = [
   { title: 'Your body', hint: 'Your goal: lose weight. It follows from your weight and target, and your daily numbers update when you change any of these.', rows: [
-    { icon: 'scale-linear', tint: '#dfebe2', label: 'Weight', value: '96 kg' },
-    { icon: 'target-linear', tint: '#dfebe2', label: 'Target weight', value: '87 kg' },
-    { icon: 'ruler-linear', tint: '#e8e5d3', label: 'Height', value: '178 cm' },
-    { icon: 'calendar-linear', tint: '#e8e5d3', label: 'Age', value: '29 years' },
-    { icon: 'user-circle-linear', tint: '#e8e5d3', label: 'Gender', value: 'Male' },
+    { icon: 'scale-bold-duotone', tint: '#dfebe2', label: 'Weight', value: '96 kg' },
+    { icon: 'target-bold-duotone', tint: '#dfebe2', label: 'Target weight', value: '87 kg' },
+    { icon: 'ruler-bold-duotone', tint: '#e8e5d3', label: 'Height', value: '178 cm' },
+    { icon: 'calendar-bold-duotone', tint: '#e8e5d3', label: 'Age', value: '29 years' },
+    { icon: 'user-circle-bold-duotone', tint: '#e8e5d3', label: 'Gender', value: 'Male' },
   ] },
-  { title: 'Logging', rows: [{ icon: 'camera-linear', tint: '#dfebe2', label: 'Preferred way to log', value: 'Photo' }] },
+  { title: 'Logging', rows: [{ icon: 'camera-bold-duotone', tint: '#dfebe2', label: 'Preferred way to log', value: 'Photo' }] },
   { title: 'Account', rows: [
-    { icon: 'bell-linear', tint: '#dfebe2', label: 'Notifications', value: 'On' },
-    { icon: 'lock-linear', tint: '#e8e5d3', label: 'Privacy & security' },
+    { icon: 'bell-bold-duotone', tint: '#dfebe2', label: 'Notifications', value: 'On' },
+    { icon: 'lock-bold-duotone', tint: '#e8e5d3', label: 'Privacy & security' },
   ] },
   { title: 'About', rows: [
-    { icon: 'document-text-linear', tint: '#e8e5d3', label: 'Terms of service' },
-    { icon: 'shield-check-linear', tint: '#e8e5d3', label: 'Privacy policy' },
-    { icon: 'heart-linear', tint: '#e8e5d3', label: 'Credits' },
-    { icon: 'letter-linear', tint: '#e8e5d3', label: 'Contact us' },
+    { icon: 'document-text-bold-duotone', tint: '#e8e5d3', label: 'Terms of service' },
+    { icon: 'shield-check-bold-duotone', tint: '#e8e5d3', label: 'Privacy policy' },
+    { icon: 'heart-bold-duotone', tint: '#e8e5d3', label: 'Credits' },
+    { icon: 'letter-bold-duotone', tint: '#e8e5d3', label: 'Contact us' },
   ] },
 ];
 export const profile = { name: 'Sherif Awad', email: 'sherif.awaadd@gmail.com' };

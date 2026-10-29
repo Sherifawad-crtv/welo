@@ -20,7 +20,7 @@ export default function Settings({ onBack }) {
             <div className="s-group">
               {g.rows.map((r) => (
                 <button className="s-row" key={r.label}>
-                  <span className="s-icon" style={{ background: r.tint }}><Sol name={r.icon} size={24} /></span>
+                  <span className="s-icon"><Sol name={r.icon} size={28} /></span>
                   <span className="s-label">{r.label}</span>
                   {r.value && <span className="s-value">{r.value}</span>}
                   <ChevronRight />

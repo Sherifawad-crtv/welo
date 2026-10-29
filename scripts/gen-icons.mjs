@@ -11,6 +11,7 @@ const names = [
   'calendar-linear', 'user-circle-linear', 'camera-linear', 'bell-linear', 'lock-linear', 'document-text-linear',
   'shield-check-linear', 'heart-linear', 'letter-linear', 'moon-linear', 'plate-linear',
   'dumbbell-large-minimalistic-linear', 'cup-hot-linear',
+  ...['scale', 'target', 'ruler', 'calendar', 'user-circle', 'camera', 'bell', 'lock', 'document-text', 'shield-check', 'heart', 'letter'].map((n) => `${n}-bold-duotone`),
 ];
 const out = {};
 for (const n of names) {
