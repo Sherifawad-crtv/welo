@@ -36,14 +36,15 @@ function WeightHero() {
 
 function StreakCard({ onOpen }) {
   return (
-    <button className="card streak-card" onClick={onOpen} aria-haspopup="dialog" aria-label={`${streak.days} day streak, open calendar`}>
-      <div className="sk-top">
-        <Flame size={44} />
-        <div className="sk-text"><b>{streak.days}</b><span>day streak</span></div>
-        <Sol name="alt-arrow-right-linear" size={18} />
-      </div>
-      <div className="sk-days">
-        {weekDays.map((d, i) => <span key={i} className={`sk-dot ${d.s || ''}`}>{d.l}</span>)}
+    <button className="card streak-card" onClick={onOpen} aria-haspopup="dialog" aria-label={`This week, ${streak.days} day streak. Open calendar`}>
+      <div className="sk-title"><span>This week</span><em>{streak.days} day streak</em></div>
+      <div className="sk-week">
+        {weekDays.map((d, i) => (
+          <div key={i} className={`sk-col${d.today ? ' now' : ''}`}>
+            <span>{d.n}</span>
+            {d.s === 'streak' ? <Flame size={40} /> : d.s === 'logged' ? <Flame size={40} style={{ opacity: 0.45 }} /> : <i className="sk-empty" />}
+          </div>
+        ))}
       </div>
     </button>
   );

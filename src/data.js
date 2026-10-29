@@ -15,8 +15,8 @@ export const macros = [
 ];
 
 export const weekDays = [
-  { l: 'T', v: null }, { l: 'F', v: null }, { l: 'S', v: null },
-  { l: 'S', v: 192, s: 'logged' }, { l: 'M', v: null }, { l: 'T', v: null }, { l: 'W', v: null, today: true, s: 'streak' },
+  { n: 'THU', l: 'T', v: null }, { n: 'FRI', l: 'F', v: null }, { n: 'SAT', l: 'S', v: null },
+  { n: 'SUN', l: 'S', v: 192, s: 'logged' }, { n: 'MON', l: 'M', v: null }, { n: 'TUE', l: 'T', v: null }, { n: 'WED', l: 'W', v: null, today: true, s: 'streak' },
 ];
 
 export const dayRows = [
