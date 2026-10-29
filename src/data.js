@@ -1,11 +1,25 @@
 export const summary = { deficit: '−2,256', resting: '2,308', eaten: '675', active: '623' };
 
+// Six categories. Each entry only names its category; icon, tint and label come from here.
+// Placeholder duotone icons until the custom set is ready.
+export const CATEGORIES = {
+  baseline: { label: 'Baseline', icon: 'moon-bold-duotone', tint: '#e8e5d3', color: '#5c5f52' },
+  food: { label: 'Food', icon: 'plate-bold-duotone', tint: '#dfebe2', color: '#1f724b' },
+  drink: { label: 'Drink', icon: 'bottle-bold-duotone', tint: '#dfebe2', color: '#1f724b' },
+  water: { label: 'Water', icon: 'waterdrop-bold-duotone', tint: '#dbeaf3', color: '#2a6f97' },
+  workout: { label: 'Workout', icon: 'dumbbell-large-minimalistic-bold-duotone', tint: '#fbe3e8', color: '#a3213f' },
+  steps: { label: 'Steps', icon: 'walking-round-bold-duotone', tint: '#fbe3e8', color: '#a3213f' },
+};
+
 export const entries = [
-  { id: 'baseline', icon: 'moon-linear', tint: '#e8e5d3', color: '#5c5f52', title: 'Baseline', sub: 'Just being you', value: '−2,308', time: 'All day', muted: true },
-  { id: 'charco', icon: 'plate-linear', tint: '#dfebe2', color: '#1f724b', title: 'Charco Chicken Smoked/Grilled', sub: 'Food', value: '+667', time: '3:48 PM', tone: 'in', ellipsis: true },
-  { id: 'workout', icon: 'dumbbell-large-minimalistic-linear', tint: '#fbe3e8', color: '#a3213f', title: 'تمارين جسم قوة, جري', sub: 'Movement', value: '−623', time: '2:24 PM', tone: 'out', rtl: true },
-  { id: 'coffee', icon: 'cup-hot-linear', tint: '#dfebe2', color: '#1f724b', title: 'Coffee', sub: 'Food', value: '+8', time: '2:24 PM', tone: 'in' },
+  { id: 'baseline', cat: 'baseline', title: 'Baseline', sub: 'Just being you', value: '−2,308', time: 'All day', muted: true },
+  { id: 'steps', cat: 'steps', title: '8,432 steps', value: '−312', time: 'Synced', tone: 'out' },
+  { id: 'water', cat: 'water', title: 'Water', value: '500 ml', time: '4:30 PM', tone: 'water' },
+  { id: 'charco', cat: 'food', title: 'Charco Chicken Smoked/Grilled', value: '+667', time: '3:48 PM', tone: 'in', ellipsis: true },
+  { id: 'workout', cat: 'workout', title: 'تمارين جسم قوة, جري', value: '−623', time: '2:24 PM', tone: 'out', rtl: true },
+  { id: 'coffee', cat: 'drink', title: 'Coffee', value: '+8', time: '2:24 PM', tone: 'in' },
 ];
+
 
 export const macros = [
   { id: 'protein', label: 'Protein', value: 62, goal: 150, unit: 'g', color: '#a3213f' },
