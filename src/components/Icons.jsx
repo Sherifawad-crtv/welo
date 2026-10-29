@@ -7,8 +7,8 @@ export const Sol = ({ name, size = 24, ...rest }) => (
 export const ProfileIcon = () => <Sol name="user-linear" size={20} />;
 export const InfoIcon = () => <Sol name="info-circle-linear" size={20} />;
 export const Chevron = ({ dir, dim }) => <Sol name={`alt-arrow-${dir}-linear`} size={18} opacity={dim ? 0.5 : 1} />;
-export const HomeIcon = ({ active }) => <Sol name={active ? 'home-2-bold' : 'home-2-linear'} size={26} />;
-export const ProgressIcon = ({ active }) => <Sol name={active ? 'chart-2-bold' : 'chart-2-linear'} size={26} />;
+export const HomeIcon = () => <Sol name="home-2-bold" size={28} />;
+export const ProgressIcon = () => <Sol name="chart-2-bold" size={28} />;
 export const PlusIcon = () => <Sol name="add-linear" size={30} />;
 export const BackArrow = () => <Sol name="arrow-left-linear" size={22} />;
 export const ChevronRight = () => <Sol name="alt-arrow-right-linear" size={18} />;

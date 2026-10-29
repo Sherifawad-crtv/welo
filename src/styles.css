@@ -83,9 +83,9 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 
 /* Bottom nav: floating pill, kept low like a native tab bar */
 :root { --nav-bottom: max(10px, calc(var(--safe-bottom) - 14px)); }
-.nav { position: fixed; left: 64px; right: 64px; bottom: var(--nav-bottom); height: 73px; border-radius: 37px; background: var(--card); box-shadow: 0 8px 28px rgba(0,0,0,.1); display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; }
-.nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; height: 73px; font-size: 16px; color: #6b6e63; }
-.nav-item.active { color: var(--green); font-weight: 500; }
+.nav { position: fixed; left: 64px; right: 64px; bottom: var(--nav-bottom); height: 73px; border-radius: 37px; background: rgba(247,246,238,.7); -webkit-backdrop-filter: blur(22px) saturate(1.7); backdrop-filter: blur(22px) saturate(1.7); border: 1px solid rgba(0,0,0,.07); box-shadow: 0 8px 28px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.7); display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; justify-items: center; }
+.nav-item { width: 58px; height: 58px; border-radius: 29px; display: grid; place-items: center; color: #b3b5aa; transition: background .2s, color .2s; }
+.nav-item.active { background: #fff; color: #1d2a22; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
 .fab { position: fixed; left: 50%; margin-left: -28px; bottom: calc(var(--nav-bottom) + 16px); width: 56px; height: 56px; border-radius: 28px; background: var(--green); display: grid; place-items: center; box-shadow: 0 10px 20px rgba(31,114,75,.35); }
 
 @media (min-width: 481px) { .nav, .fab { position: absolute; } .overlay { position: absolute; } .esheet { top: 60px; } }
@@ -205,6 +205,5 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .s-icon { color: var(--green); }
 .circle { color: #fff; }
 .fab { color: #fff; }
-.nav-item svg { flex: none; }
 
 .mascot { left: 20px; top: 242px; width: 34px; height: auto; }
