@@ -57,38 +57,56 @@ function StreakCard({ onOpen }) {
 
 const GOAL = -500;
 const COL = 51;
-const PLOT_TOP = 62;
-const PLOT_H = 100;
+const PLOT_TOP = 104;
+const PLOT_H = 156;
+const DOT = 34;
+
+const toneOf = (v) => (v > 0 ? 'warn' : v <= GOAL ? 'good' : 'ok');
+const TONE = { good: '#1f724b', ok: '#c49a2c', warn: '#a3213f' };
+const MOUTH = { good: 'M10 21q7 6 14 0', ok: 'M11 22h12', warn: 'M10 24q7-6 14 0' };
+
+function Face({ tone }) {
+  return (
+    <svg width={DOT} height={DOT} viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="17" fill={TONE[tone]} />
+      <circle cx="11.5" cy="14" r="3.6" fill="#fff" /><circle cx="22.5" cy="14" r="3.6" fill="#fff" />
+      <circle cx="12" cy="14.4" r="1.7" fill="#1b3d2c" /><circle cx="23" cy="14.4" r="1.7" fill="#1b3d2c" />
+      <path d={MOUTH[tone]} fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 function AvgChart() {
   const vals = counted.map((d) => d.v);
-  const devs = vals.map((v) => v - weekAvg);
-  const up = Math.max(0, ...devs);
-  const down = Math.max(0, ...devs.map((d) => -d));
-  const k = PLOT_H / Math.max(1, up + down); // px per kcal
-  const lineY = PLOT_TOP + up * k;
-  const sd = Math.round(Math.sqrt(devs.reduce((t, d) => t + d * d, 0) / Math.max(1, devs.length)));
-  const yOf = (v) => lineY - (v - weekAvg) * k;
-  const tone = (v) => (v > 0 ? '#a3213f' : v <= GOAL ? '#1f724b' : '#c49a2c');
+  const hi = Math.max(...vals);
+  const lo = Math.min(...vals);
+  const yOf = (v) => PLOT_TOP + DOT / 2 + ((hi - v) / Math.max(1, hi - lo)) * (PLOT_H - DOT);
+  const avgY = yOf(weekAvg);
+  const sd = Math.round(Math.sqrt(vals.reduce((t, v) => t + (v - weekAvg) ** 2, 0) / Math.max(1, vals.length)));
+  const lastIdx = weekDays.reduce((m, d, i) => (d.v !== null ? i : m), 0);
+  const lastX = 14.5 + lastIdx * COL + COL / 2;
+  const headline = weekAvg <= GOAL ? 'Crushing your goal' : weekAvg < 0 ? 'On the right track' : 'A little over this week';
   return (
-    <div className="card avg-card" role="img" aria-label={`Average ${fmtSigned(weekAvg)} kcal a day, typical swing plus or minus ${sd}`}>
-      <div className="avg-title">Average each day</div>
-      <div className="avg-val">{fmtSigned(weekAvg)}<small> kcal</small></div>
-      <div className="avg-sub">Typical swing ±{sd} kcal</div>
-      <div className="avg-band" style={{ top: lineY - sd * k, height: 2 * sd * k }} />
-      <div className="avg-line" style={{ top: lineY - 1 }} />
-      <div className="avg-goal" style={{ top: yOf(GOAL) }}><span>Goal {fmtSigned(GOAL)}</span></div>
+    <div className="card avg-card" role="img" aria-label={`Average ${fmtSigned(weekAvg)} kcal a day. ${headline}`}>
+      <div className="avg-title">Average of the last {counted.length} days</div>
+      <div className="avg-head">{headline}</div>
+      <div className="avg-num">{fmtSigned(weekAvg)}<small> kcal a day</small></div>
+      {[0, 1, 2, 3, 4].map((g) => <i className="avg-grid" key={g} style={{ top: PLOT_TOP + (g * PLOT_H) / 4 }} />)}
       {weekDays.map((d, i) => (
         <div className="col" key={i} style={{ left: 14.5 + i * COL }}>
-          {d.v === null ? <i className="avg-ghost" style={{ top: lineY - 6 }} /> : (
+          {d.v !== null && (
             <>
-              <i className="avg-stem" style={{ top: Math.min(lineY, yOf(d.v)), height: Math.abs(yOf(d.v) - lineY), background: tone(d.v) }} />
-              <i className="avg-dot" style={{ top: yOf(d.v) - 7, background: tone(d.v) }} />
+              <i className="avg-pill" style={{ top: yOf(d.v) - DOT / 2 - 3, height: PLOT_TOP + PLOT_H - yOf(d.v) + DOT / 2 + 3 - DOT / 2 + 6, background: TONE[toneOf(d.v)] }} />
+              <span className="avg-face" style={{ top: yOf(d.v) - DOT / 2 }}><Face tone={toneOf(d.v)} /></span>
             </>
           )}
-          <div className={`dl${d.today ? ' now' : ''}`} style={{ top: 178 }}>{d.l}</div>
+          <div className={`dl${d.today ? ' now' : ''}`} style={{ top: PLOT_TOP + PLOT_H + 14 }}>{d.l}</div>
         </div>
       ))}
+      <i className="avg-solid" style={{ top: avgY - 1, left: 14, width: lastX - 14 }} />
+      <i className="avg-dash" style={{ top: avgY - 1, left: lastX, right: 62 }} />
+      <span className="avg-tag" style={{ top: avgY - 10 }}>Avg.</span>
+      <div className="avg-foot">Smiles mean you hit your goal · swing ±{sd} kcal</div>
     </div>
   );
 }
