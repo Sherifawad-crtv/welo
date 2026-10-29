@@ -15,10 +15,11 @@ export const entries = [
   { id: 'baseline', cat: 'baseline', title: 'Baseline', sub: 'Just being you', value: '−2,308', time: 'All day', muted: true },
   { id: 'steps', cat: 'steps', title: '8,432 steps', value: '−312', time: 'Synced', tone: 'out' },
   { id: 'water', cat: 'water', title: 'Water', value: '500 ml', time: '4:30 PM', tone: 'water' },
-  { id: 'charco', cat: 'food', title: 'Charco Chicken Smoked/Grilled', value: '+667', time: '3:48 PM', tone: 'in', ellipsis: true },
-  { id: 'workout', cat: 'workout', title: 'تمارين جسم قوة, جري', value: '−623', time: '2:24 PM', tone: 'out', rtl: true },
-  { id: 'coffee', cat: 'drink', title: 'Coffee', value: '+8', time: '2:24 PM', tone: 'in' },
+  { id: 'salmon', cat: 'food', title: 'Grilled salmon bowl', value: '+565', time: '3:48 PM', tone: 'in' },
+  { id: 'workout', cat: 'workout', title: 'Upper body strength', value: '−311', time: '2:24 PM', tone: 'out' },
+  { id: 'juice', cat: 'drink', title: 'Orange juice', value: '+110', time: '1:10 PM', tone: 'in' },
 ];
+
 
 
 export const macros = [
@@ -65,20 +66,20 @@ const item = (id, name, qty, unit, step, kcal, p, c, f, extra = {}) => ({
 const option = (name, kcal, p, c, f) => ({ name, kcal, p, c, f });
 
 export const entryDetails = {
-  charco: {
+  salmon: {
     time: '3:48 PM', category: 'Food',
     items: [
-      item('a', 'Charco Chicken Smoked/Grilled Chicken', 225, 'g', 25, 371, 61, 0, 12),
-      item('b', 'Roasted potato wedges', 4, 'pieces', 1, 156, 2, 25, 5, {
+      item('a', 'Grilled salmon', 150, 'g', 25, 312, 34, 0, 19),
+      item('b', 'Brown rice', 150, 'g', 25, 165, 4, 35, 1, {
         estimate: true,
-        options: [option('Baked potato wedges', 140, 2, 24, 4), option('French fries', 190, 3, 26, 9), option('Sweet potato wedges', 130, 2, 26, 3)],
+        options: [option('Quinoa', 180, 7, 31, 3), option('White rice', 195, 4, 43, 0), option('Cauliflower rice', 40, 3, 8, 0)],
       }),
-      item('c', 'Corn', 2, 'pieces', 1, 96, 3, 21, 2),
+      item('c', 'Avocado', 55, 'g', 5, 88, 1, 5, 8),
     ],
   },
-  coffee: {
-    time: '2:24 PM', category: 'Food',
-    items: [item('a', 'Coffee', 1, 'cup', 1, 8, 0, 1, 0)],
+  juice: {
+    time: '1:10 PM', category: 'Drink',
+    items: [item('a', 'Orange juice', 250, 'ml', 50, 110, 2, 26, 0)],
   },
 };
 
