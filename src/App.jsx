@@ -32,7 +32,7 @@ export default function App() {
                 <Entries entries={entries.filter((e) => !deleted.includes(e.id))} details={entryDetails} onOpen={setEntryId} />
               </div>
             </>
-          ) : <Progress />}
+          ) : <Progress onStreak={() => setStreakOpen(true)} />}
         </div>
         {streakOpen && <StreakSheet onClose={() => setStreakOpen(false)} />}
         {entryId ? <EntrySheet key={entryId} detail={entryDetails[entryId]} onClose={() => setEntryId(null)} onDelete={() => { setDeleted((d) => [...d, entryId]); setEntryId(null); }} /> : !streakOpen && <NavBar tab={tab} onTab={setTab} />}

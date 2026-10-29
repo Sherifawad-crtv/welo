@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Chevron } from '../components/Icons.jsx';
-import { FakeStatusBar } from '../components/Icons.jsx';
-import { weekDays, dayRows, weighGrid, weighAxis, weekByWeek } from '../data.js';
+import { Chevron, FakeStatusBar, Sol } from '../components/Icons.jsx';
+import { Flame } from '../components/Flame.jsx';
+import { weekDays, dayRows, weighGrid, weighAxis, weekByWeek, streak } from '../data.js';
 
 function Segmented({ value, onChange }) {
   return (
@@ -34,9 +34,25 @@ function WeightHero() {
   );
 }
 
-function WeekBody() {
+function StreakCard({ onOpen }) {
+  return (
+    <button className="card streak-card" onClick={onOpen} aria-haspopup="dialog" aria-label={`${streak.days} day streak, open calendar`}>
+      <div className="sk-top">
+        <Flame size={44} />
+        <div className="sk-text"><b>{streak.days}</b><span>day streak</span></div>
+        <Sol name="alt-arrow-right-linear" size={18} />
+      </div>
+      <div className="sk-days">
+        {weekDays.map((d, i) => <span key={i} className={`sk-dot ${d.s || ''}`}>{d.l}</span>)}
+      </div>
+    </button>
+  );
+}
+
+function WeekBody({ onStreak }) {
   return (
     <>
+      <StreakCard onOpen={onStreak} />
       <div className="card chart-card">
         <div className="card-title">Balance each day</div>
         <div className="baseline" />
@@ -97,7 +113,7 @@ function WeightBody() {
   );
 }
 
-export default function Progress() {
+export default function Progress({ onStreak }) {
   const [view, setView] = useState('week');
   const week = view === 'week';
   return (
@@ -109,7 +125,7 @@ export default function Progress() {
           {week ? <WeekHero /> : <WeightHero />}
         </div>
       </header>
-      <div className="sheet">{week ? <WeekBody /> : <WeightBody />}</div>
+      <div className="sheet">{week ? <WeekBody onStreak={onStreak} /> : <WeightBody />}</div>
     </>
   );
 }
