@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Chevron, FakeStatusBar, Sol } from '../components/Icons.jsx';
 import { Flame } from '../components/Flame.jsx';
 import Mascot from '../components/Mascot.jsx';
-import BalanceChart from '../components/BalanceChart.jsx';
 import { fmtSigned } from '../utils.js';
 import { weekDays, dayRows, weighGrid, weighAxis, weekByWeek, streak } from '../data.js';
 
@@ -105,7 +104,6 @@ function WeekBody({ onStreak }) {
   return (
     <>
       <StreakCard onOpen={onStreak} />
-      <BalanceChart days={weekDays} />
       <AvgChart />
       <div className="card stat-card goal-card"><div className="c-title">Your goal</div><div className="c-head"><b>−500</b><small>kcal a day</small></div></div>
       <h2 className="h2">Days</h2>
