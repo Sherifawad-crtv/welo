@@ -205,7 +205,7 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 
 .mascot { left: 20px; top: 242px; width: 34px; height: auto; }
 /* Bottom nav: three equal cells on one line. Padding 8, outer radius 37, inner radius 29. */
-.nav { position: fixed; left: 64px; right: 64px; bottom: var(--nav-bottom); height: 74px; padding: calc(var(--pad-nav) - 1px); border-radius: var(--r-nav); background: rgba(247,246,238,.7); -webkit-backdrop-filter: blur(22px) saturate(1.7); backdrop-filter: blur(22px) saturate(1.7); border: 1px solid rgba(0,0,0,.07); box-shadow: 0 8px 28px rgba(0,0,0,.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.nav { position: fixed; left: 64px; right: 64px; bottom: var(--nav-bottom); height: 74px; padding: calc(var(--pad-nav) - 1px); border-radius: var(--r-nav); background: rgba(247,246,238,.32); -webkit-backdrop-filter: blur(8px) saturate(1.6); backdrop-filter: blur(8px) saturate(1.6); border: 1px solid rgba(255,255,255,.55); box-shadow: 0 8px 28px rgba(0,0,0,.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
 .nav-item { height: 100%; border-radius: var(--r-nav-item); display: grid; place-items: center; color: #b3b5aa; transition: background .2s, color .2s; }
 .nav-item.active { background: #fff; color: var(--green); }
 .nav-item.add { width: 58px; justify-self: center; background: var(--green); color: #fff; }
