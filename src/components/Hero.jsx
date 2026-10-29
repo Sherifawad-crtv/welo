@@ -19,7 +19,7 @@ export default function Hero({ summary, onProfile, onDate }) {
         <div className="hero-number">{summary.deficit}</div>
         <div className="hero-sub">
           <span className="dim">kcal</span>
-          <span className="slash">/</span>
+          <span className="slash" aria-hidden="true">/</span>
           <span className="resting">{summary.resting}</span>
           <span className="dim"> resting</span>
         </div>

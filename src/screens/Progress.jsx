@@ -8,9 +8,9 @@ import { weekDays, dayRows, weighGrid, weighAxis, weekByWeek, streak } from '../
 
 function Segmented({ value, onChange }) {
   return (
-    <div className="seg">
+    <div className="seg" role="tablist" aria-label="Progress view">
       {['week', 'weight'].map((k) => (
-        <button key={k} className={value === k ? 'on' : ''} onClick={() => onChange(k)}>{k === 'week' ? 'Week' : 'Weight'}</button>
+        <button key={k} role="tab" aria-selected={value === k} className={value === k ? 'on' : ''} onClick={() => onChange(k)}>{k === 'week' ? 'Week' : 'Weight'}</button>
       ))}
     </div>
   );
@@ -129,7 +129,7 @@ function WeightBody() {
   return (
     <>
       <div className="chips">
-        {['4 weeks', '12 weeks', 'All'].map((c) => <button key={c} className={range === c ? 'on' : ''} onClick={() => setRange(c)}>{c}</button>)}
+        {['4 weeks', '12 weeks', 'All'].map((c) => <button key={c} aria-pressed={range === c} className={range === c ? 'on' : ''} onClick={() => setRange(c)}>{c}</button>)}
       </div>
       <div className="wchart">
         {weighGrid.map((g, i) => (
