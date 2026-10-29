@@ -1,7 +1,7 @@
 import mascot from '../assets/mascot-male.png';
-import { Chevron, InfoIcon, ProfileIcon, FakeStatusBar } from './Icons.jsx';
+import { Chevron, InfoIcon, ProfileIcon, FakeStatusBar, Sol } from './Icons.jsx';
 
-export default function Hero({ summary, onProfile }) {
+export default function Hero({ summary, onProfile, onDate }) {
   return (
     <header className="hero">
       <div className="hero-in">
@@ -11,7 +11,7 @@ export default function Hero({ summary, onProfile }) {
 
         <div className="date-row tb1">
           <button className="circle" aria-label="Previous day"><Chevron dir="left" /></button>
-          <div className="today">Today</div>
+          <button className="today" onClick={onDate} aria-haspopup="dialog">Today<Sol name="alt-arrow-down-linear" size={16} /></button>
           <button className="circle faint" aria-label="Next day" disabled><Chevron dir="right" dim /></button>
         </div>
 

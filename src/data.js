@@ -84,3 +84,11 @@ export const settingsGroups = [
   ] },
 ];
 export const profile = { name: 'Sherif Awad', email: 'sherif.awaadd@gmail.com' };
+
+// Days with something logged, and the days that make up the running streak, by month.
+export const streak = {
+  days: 1,
+  savers: 2,
+  logged: { '2026-10': [25, 28] },
+  current: { '2026-10': [28] },
+};
