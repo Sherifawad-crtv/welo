@@ -10,7 +10,7 @@ const names = [
   'pen-linear', 'trash-bin-trash-linear', 'notes-linear', 'scale-linear', 'target-linear', 'ruler-linear',
   'calendar-linear', 'user-circle-linear', 'camera-linear', 'bell-linear', 'lock-linear', 'document-text-linear',
   'shield-check-linear', 'heart-linear', 'letter-linear', 'moon-linear', 'plate-linear',
-  'dumbbell-large-minimalistic-linear', 'cup-hot-linear', 'waterdrop-linear', 'microphone-linear', 'minus-linear', 'check-read-linear', 'undo-left-linear',
+  'dumbbell-large-minimalistic-linear', 'cup-hot-linear', 'waterdrop-linear', 'microphone-linear', 'minus-linear', 'check-read-linear', 'undo-left-linear', 'fire-bold-duotone',
   ...['scale', 'target', 'ruler', 'calendar', 'user-circle', 'camera', 'bell', 'lock', 'document-text', 'shield-check', 'heart', 'letter'].map((n) => `${n}-bold-duotone`),
 ];
 const out = {};
