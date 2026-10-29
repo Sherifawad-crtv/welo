@@ -151,9 +151,6 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .e-grab > i { display: block; margin: 0 auto; width: 37px; height: 5px; border-radius: 3px; background: #c9c6b5; }
 .e-bar { display: flex; align-items: center; justify-content: center; position: relative; height: 52px; }
 .e-bar-title { font-size: 17px; line-height: 22px; font-weight: 600; color: var(--ink); }
-.e-x { position: absolute; right: 0; top: 4px; width: 44px; height: 44px; display: grid; place-items: center; }
-.e-x::before { content: ''; position: absolute; width: 30px; height: 30px; border-radius: 15px; background: rgba(60,60,30,.1); }
-.e-x svg { position: relative; color: #5c5f52; }
 .e-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--pad-sheet) 24px; position: relative; }
 .e-mascot { position: absolute; right: 46px; top: 4px; width: 92px; height: auto; z-index: 0; }
 .e-total { position: relative; z-index: 1; margin-top: 70px; padding: 14px 16px 16px; border-radius: var(--r-card); background: #dfebe2; }
@@ -172,12 +169,6 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .e-name { flex: 1; font-size: 19px; line-height: 24px; font-weight: 600; color: var(--ink); letter-spacing: -.2px; }
 .e-rkcal { flex: none; font-family: var(--display); font-size: 22px; line-height: 26px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 .e-rkcal small { font-size: 14px; font-weight: 500; color: #5c5f52; }
-.e-rm { flex: none; width: 44px; height: 44px; margin: -10px -12px -10px -4px; display: grid; place-items: center; color: var(--muted); }
-.e-step { display: inline-flex; align-items: center; margin-top: 8px; padding: 2px; border-radius: 18px; background: #e8e5d3; }
-.e-step button { width: 36px; height: 36px; border-radius: 16px; display: grid; place-items: center; color: var(--green); }
-.e-step button:active:not(:disabled) { background: rgba(255,255,255,.7); }
-.e-step button:disabled { color: #b3b5aa; }
-.e-step span { min-width: 84px; text-align: center; font-size: 17px; line-height: 22px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
 .e-imacros { margin-top: 10px; font-size: 15px; line-height: 20px; color: var(--muted); letter-spacing: .2px; }
 .e-est { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 4px 10px 4px 8px; border-radius: 12px; background: #f4ead0; font-size: 14px; line-height: 18px; color: #7a5d12; }
 .e-opts { display: flex; align-items: center; gap: 4px; min-height: 44px; margin-top: 2px; font-size: 17px; font-weight: 500; color: var(--green); }
@@ -261,3 +252,14 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .segs i { flex: 1; height: 10px; border-radius: 5px; background: #e1ddcc; }
 .macro-value { margin-top: 8px; font-size: 16px; line-height: 20px; color: #5c5f52; letter-spacing: .2px; }
 @media (min-width: 481px) { .overlay { position: absolute; } .esheet { top: 60px; } }
+
+/* Item controls: delete pill + stepper pill, same height, right-aligned for thumb reach */
+.e-ctrl { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 10px; }
+.e-step { display: inline-flex; align-items: center; padding: 2px; border-radius: 20px; background: #e8e5d3; }
+.e-step button { width: 46px; height: 36px; border-radius: 18px; display: grid; place-items: center; color: var(--green); }
+.e-step button:active:not(:disabled) { background: rgba(255,255,255,.7); }
+.e-step button:disabled { color: #b3b5aa; }
+.e-step span { min-width: 76px; text-align: center; font-size: 17px; line-height: 22px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.e-pill { display: grid; place-items: center; width: 56px; height: 40px; border-radius: 20px; }
+.e-trash { background: #fbe3e8; color: #a3213f; }
+.e-trash:active { background: #f5cfd7; }

@@ -107,7 +107,6 @@ export default function EntrySheet({ detail, onClose, onDelete }) {
           <i />
           <div className="e-bar">
             <span className="e-bar-title">{detail.time}</span>
-            <button className="e-x" onClick={dismiss} onPointerDown={(e) => e.stopPropagation()} aria-label="Close"><Sol name="close-linear" size={18} /></button>
           </div>
         </div>
 
@@ -131,12 +130,14 @@ export default function EntrySheet({ detail, onClose, onDelete }) {
                   <div className="e-rtop">
                     <div className="e-name">{it.name}</div>
                     <div className="e-rkcal">{c.kcal}<small> kcal</small></div>
-                    <button className="e-rm" aria-label={`Remove ${it.name}`} onClick={() => remove(it)}><Sol name="close-linear" size={16} /></button>
                   </div>
-                  <div className="e-step" role="group" aria-label={`Quantity of ${it.name}`}>
-                    <button aria-label="Decrease" disabled={it.qty <= it.min} onClick={() => step(it.id, -1)}><Sol name="minus-linear" size={18} /></button>
-                    <span>{it.qty}{unitLabel(it)}</span>
-                    <button aria-label="Increase" onClick={() => step(it.id, 1)}><Sol name="add-linear" size={18} /></button>
+                  <div className="e-ctrl">
+                    <button className="e-pill e-trash" aria-label={`Remove ${it.name}`} onClick={() => remove(it)}><Sol name="trash-bin-trash-linear" size={20} /></button>
+                    <div className="e-step" role="group" aria-label={`Quantity of ${it.name}`}>
+                      <button aria-label="Decrease" disabled={it.qty <= it.min} onClick={() => step(it.id, -1)}><Sol name="minus-linear" size={20} /></button>
+                      <span>{it.qty}{unitLabel(it)}</span>
+                      <button aria-label="Increase" onClick={() => step(it.id, 1)}><Sol name="add-linear" size={20} /></button>
+                    </div>
                   </div>
                   <div className="e-imacros">Protein {c.p}g · Carbs {c.c}g · Fat {c.f}g</div>
                   {it.estimate && <div className="e-est"><Sol name="info-circle-linear" size={16} />Estimate, please check</div>}
