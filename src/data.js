@@ -38,18 +38,28 @@ export const weekByWeek = [
   { title: '3 weeks ago', range: '1 Oct – 7 Oct', none: true },
 ];
 
+// Items store per-unit values so the stepper can rescale kcal and macros.
+const item = (id, name, qty, unit, step, kcal, p, c, f, extra = {}) => ({
+  id, name, qty, unit, step, min: step,
+  per: { kcal: kcal / qty, p: p / qty, c: c / qty, f: f / qty }, ...extra,
+});
+const option = (name, kcal, p, c, f) => ({ name, kcal, p, c, f });
+
 export const entryDetails = {
   charco: {
-    time: '3:48 PM', kcal: 667, macros: 'Protein 68g · Carbs 54g · Fat 20g',
+    time: '3:48 PM', category: 'Food',
     items: [
-      { id: 'a', name: 'Charco Chicken Smoked/Grilled Chicken', qty: '225 g', kcal: 371, macros: 'Protein 61g · Carbs 0g · Fat 12g' },
-      { id: 'b', name: 'Roasted potato wedges', qty: '4 pieces', kcal: 156, macros: 'Protein 2g · Carbs 25g · Fat 5g', estimate: true, options: 3 },
-      { id: 'c', name: 'Corn', qty: '2 pieces', kcal: 96, macros: 'Protein 3g · Carbs 21g · Fat 2g' },
+      item('a', 'Charco Chicken Smoked/Grilled Chicken', 225, 'g', 25, 371, 61, 0, 12),
+      item('b', 'Roasted potato wedges', 4, 'pieces', 1, 156, 2, 25, 5, {
+        estimate: true,
+        options: [option('Baked potato wedges', 140, 2, 24, 4), option('French fries', 190, 3, 26, 9), option('Sweet potato wedges', 130, 2, 26, 3)],
+      }),
+      item('c', 'Corn', 2, 'pieces', 1, 96, 3, 21, 2),
     ],
   },
   coffee: {
-    time: '2:24 PM', kcal: 8, macros: 'Protein 0g · Carbs 1g · Fat 0g',
-    items: [{ id: 'a', name: 'Coffee', qty: '1 cup', kcal: 8, macros: 'Protein 0g · Carbs 1g · Fat 0g' }],
+    time: '2:24 PM', category: 'Food',
+    items: [item('a', 'Coffee', 1, 'cup', 1, 8, 0, 1, 0)],
   },
 };
 

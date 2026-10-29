@@ -12,6 +12,7 @@ export default function App() {
   const [tab, setTab] = useState('home');
   const [settings, setSettings] = useState(false);
   const [entryId, setEntryId] = useState(null);
+  const [deleted, setDeleted] = useState([]);
 
   useEffect(() => { window.scrollTo(0, 0); }, [tab, settings]);
 
@@ -26,12 +27,12 @@ export default function App() {
               <Hero summary={summary} onProfile={() => setSettings(true)} />
               <div className="sheet">
                 <Macros macros={macros} />
-                <Entries entries={entries} details={entryDetails} onOpen={setEntryId} />
+                <Entries entries={entries.filter((e) => !deleted.includes(e.id))} details={entryDetails} onOpen={setEntryId} />
               </div>
             </>
           ) : <Progress />}
         </div>
-        {entryId ? <EntrySheet detail={entryDetails[entryId]} onClose={() => setEntryId(null)} /> : <NavBar tab={tab} onTab={setTab} />}
+        {entryId ? <EntrySheet key={entryId} detail={entryDetails[entryId]} onClose={() => setEntryId(null)} onDelete={() => { setDeleted((d) => [...d, entryId]); setEntryId(null); }} /> : <NavBar tab={tab} onTab={setTab} />}
       </div>
     </div>
   );
