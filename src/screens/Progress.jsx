@@ -44,7 +44,7 @@ function WeightHero() {
 function StreakCard({ onOpen }) {
   return (
     <button className="card streak-card" onClick={onOpen} aria-haspopup="dialog" aria-label={`This week, ${streak.days} day streak. Open calendar`}>
-      <div className="sk-title"><span>This week</span><em>{streak.days} day streak<Sol name="alt-arrow-right-linear" size={16} /></em></div>
+      <div className="sk-title"><span className="c-title">This week</span><em>{streak.days} day streak<Sol name="alt-arrow-right-linear" size={16} /></em></div>
       <div className="sk-week">
         {weekDays.map((d, i) => (
           <div key={i} className={`sk-col${d.today ? ' now' : ''}`}>
@@ -59,7 +59,7 @@ function StreakCard({ onOpen }) {
 
 const GOAL = -500;
 const COL = 51;
-const PLOT_TOP = 104;
+const PLOT_TOP = 92;
 const PLOT_H = 156;
 const DOT = 42;
 
@@ -79,9 +79,8 @@ function AvgChart() {
   const headline = weekAvg <= GOAL ? 'Crushing your goal' : weekAvg < 0 ? 'On the right track' : 'A little over this week';
   return (
     <div className="card avg-card" role="img" aria-label={`Average ${fmtSigned(weekAvg)} kcal a day. ${headline}`}>
-      <div className="avg-title">Average of the last {counted.length} days</div>
-      <div className="avg-head">{headline}</div>
-      <div className="avg-num">{fmtSigned(weekAvg)}<small> kcal a day</small></div>
+      <div className="avg-title c-title">Average of the last {counted.length} days</div>
+      <div className="avg-head c-head"><b>{fmtSigned(weekAvg)}</b><small>kcal a day</small><span>{headline}</span></div>
       {[0, 1, 2, 3, 4].map((g) => <i className="avg-grid" key={g} style={{ top: PLOT_TOP + (g * PLOT_H) / 4 }} />)}
       <i className="avg-solid" style={{ top: avgY - 1, left: 14, width: lastX - 14 }} />
       <i className="avg-dash" style={{ top: avgY - 1, left: lastX, right: 62 }} />
@@ -108,7 +107,7 @@ function WeekBody({ onStreak }) {
       <StreakCard onOpen={onStreak} />
       <BalanceChart days={weekDays} />
       <AvgChart />
-      <div className="card stat-card goal-card"><div className="sc-label">Your goal</div><div className="sc-value">−500 a day</div></div>
+      <div className="card stat-card goal-card"><div className="c-title">Your goal</div><div className="c-head"><b>−500</b><small>kcal a day</small></div></div>
       <h2 className="h2">Days</h2>
       {dayRows.map((r) => (
         <div className="entry" key={r.d}>
@@ -131,17 +130,21 @@ function WeightBody() {
       <div className="chips">
         {['4 weeks', '12 weeks', 'All'].map((c) => <button key={c} aria-pressed={range === c} className={range === c ? 'on' : ''} onClick={() => setRange(c)}>{c}</button>)}
       </div>
+      <div className="card wcard">
+        <div className="c-title">Weigh-ins</div>
       <div className="wchart">
-        {weighGrid.map((g, i) => (
-          <div key={g}><span className="gl" style={{ top: 8 + i * 40 - 9 }}>{g}</span><i className="gline" style={{ top: 8 + i * 40 }} /></div>
-        ))}
-        {weighAxis.map((a) => <span className="ax" key={a.l} style={{ left: a.x - 20 }}>{a.l}</span>)}
-        <span className="ax end">Today</span>
-        <i className="wdot" style={{ top: 8 + 80 - 5 }} />
+        <div className="wplot">
+          {weighGrid.map((g, i) => (
+            <div key={g}><span className="gl" style={{ top: 8 + i * 40 - 8 }}>{g}</span><i className="gline" style={{ top: 8 + i * 40 }} /></div>
+          ))}
+          <i className="wdot" style={{ top: 8 + 80 - 5 }} />
+          <div className="wax">{weighAxis.map((a) => <span className="ax" key={a.l}>{a.l}</span>)}<span className="ax">Today</span></div>
+        </div>
       </div>
       <div className="legend">
         <span><i className="d" />Each weigh-in</span><span><i className="t" />Trend</span>
         <span className="full"><i className="g" />Target 87 kg (off the chart)</span>
+      </div>
       </div>
       <button className="primary">Log weight</button>
       <h2 className="h2">Week by week</h2>

@@ -43,8 +43,8 @@ export default function BalanceChart({ days }) {
 
   return (
     <div className="card bal" role="group" aria-label={summary}>
-      <div className="bal-title">Balance each day</div>
-      <div className="bal-head" aria-live="polite">
+      <div className="bal-title c-title">Balance each day</div>
+      <div className="bal-head c-head" aria-live="polite">
         <b>{head.big}<small>{head.unit}</small></b>
         <span>{head.sub}</span>
       </div>

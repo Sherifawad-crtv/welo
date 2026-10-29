@@ -107,12 +107,8 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .bar { position: absolute; left: 12.5px; width: 26px; border-radius: 6px; }
 .bar.up { bottom: calc(100% - 87px); background: var(--green); }
 .bar.down { top: 87px; background: #9fcfb3; }
-.dl { position: absolute; left: 0; right: 0; top: 138px; text-align: center; font-size: 16px; line-height: 20px; color: var(--muted); }
-.dl.now { color: #111; font-weight: 700; }
 .two { display: flex; gap: 12px; margin-top: 16px; }
 .stat-card { flex: 1; height: 82px; padding: 14px 16px; border: 0; }
-.sc-label { font-size: 16px; line-height: 22px; color: #5c5f52; letter-spacing: .3px; }
-.sc-value { font-size: 26px; line-height: 32px; font-weight: 500; color: var(--ink); margin-top: 2px; }
 .date-chip { width: 44px; height: 44px; border-radius: 14px; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #5c5f52; }
 .date-chip b { font-size: 21px; line-height: 22px; font-weight: 500; }
 .date-chip span { font-size: 12px; line-height: 14px; letter-spacing: 1px; }
@@ -122,13 +118,7 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .chips { display: flex; gap: 9px; }
 .chips button { height: 44px; padding: 0 18px; border-radius: 22px; background: #e8e5d3; font-size: 18px; font-weight: 500; color: #5c5f52; }
 .chips button.on { background: var(--green); color: #fff; }
-.wchart { position: relative; height: 190px; margin-top: 14px; }
-.gline { position: absolute; left: 34px; right: 7px; height: 1px; background: #e1ddcc; }
-.gl { position: absolute; left: 0; width: 28px; text-align: right; font-size: 14px; line-height: 18px; color: var(--muted); }
-.ax { position: absolute; top: 171px; width: 40px; text-align: center; font-size: 14px; line-height: 18px; color: var(--muted); }
-.ax.end { left: auto; right: 4px; width: auto; }
-.wdot { position: absolute; right: 2px; width: 10px; height: 10px; border-radius: 5px; background: var(--green); }
-.legend { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 4px; font-size: 18px; line-height: 24px; color: #5c5f52; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; font-size: 14px; line-height: 20px; color: #5c5f52; }
 .legend span { display: inline-flex; align-items: center; gap: 8px; }
 .legend .full { width: 100%; }
 .legend i { display: inline-block; }
@@ -138,9 +128,9 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .primary { display: block; width: 100%; height: 52px; margin-top: 16px; border-radius: var(--r-card); background: var(--green); color: #fff; font-size: 22px; font-weight: 500; }
 .wrow { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid #e1ddcc; }
 .wrow:last-child { border-bottom: 0; }
-.wt { font-size: 24px; line-height: 28px; font-weight: 500; color: var(--ink); }
-.wval { font-size: 24px; font-weight: 500; color: var(--ink); margin-right: 32px; }
-.wnone { font-size: 20px; color: var(--muted); letter-spacing: .3px; }
+.wt { font-size: 20px; line-height: 24px; font-weight: 500; color: var(--ink); }
+.wval { font-size: 20px; line-height: 24px; font-weight: 500; color: var(--ink); }
+.wnone { font-size: 20px; line-height: 24px; font-weight: 500; color: var(--muted); }
 
 /* Entry detail sheet (iOS sheet: grabber, nav bar, grouped list, docked action) */
 .overlay { position: fixed; inset: 0; z-index: 40; background: rgba(0,20,10,.28); animation: fade .2s ease; }
@@ -290,31 +280,20 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 
 /* Week: streak card */
 .streak-card { display: block; width: 100%; padding: 16px 12px 16px; margin-bottom: 12px; text-align: left; }
-.sk-title { display: flex; align-items: baseline; justify-content: space-between; padding: 0 4px; font-size: 15px; line-height: 20px; }
-.sk-title span { font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink); }
-.sk-title em { display: inline-flex; align-items: center; gap: 2px; font-style: normal; color: var(--green); font-weight: 500; }
 .streak-card { cursor: pointer; transition: transform .12s ease, background .12s ease; }
 .streak-card:active { transform: scale(.98); background: #f0eee2; }
 .sk-week { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 14px; }
 .sk-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.sk-col span { font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: .6px; color: var(--muted); }
-.sk-col.now span { color: var(--ink); }
 .sk-empty { width: 38px; height: 38px; margin: 1px 0; border-radius: 19px; border: 2px dashed #c3c5b8; }
 
 /* Average each day: soft pills topped with faces, black average line */
-.avg-card { position: relative; height: 340px; margin-top: 12px; text-align: center; }
+.avg-card { position: relative; height: 324px; margin-top: 12px; text-align: center; }
 .avg-card .col { position: absolute; top: 0; width: 51px; height: 100%; }
-.avg-title { position: absolute; left: 0; right: 0; top: 16px; font-size: 15px; line-height: 20px; color: var(--muted); }
-.avg-head { position: absolute; left: 0; right: 0; top: 38px; font-family: var(--display); font-size: 24px; line-height: 30px; font-weight: 700; color: var(--ink); letter-spacing: -.3px; }
-.avg-num { position: absolute; left: 0; right: 0; top: 68px; font-size: 15px; line-height: 20px; color: #5c5f52; }
-.avg-num small { font-size: 15px; }
 .avg-grid { position: absolute; left: 14px; right: 14px; height: 1px; background: #ece9db; }
 .avg-pill { position: absolute; left: 3.5px; width: 44px; border-radius: 22px; opacity: .16; }
 .avg-face { position: absolute; left: 4.5px; line-height: 0; }
 .avg-solid { position: absolute; height: 2px; background: var(--ink); border-radius: 1px; }
 .avg-dash { position: absolute; height: 0; border-top: 2px dotted var(--ink); }
-.avg-tag { position: absolute; right: 14px; font-size: 14px; line-height: 20px; color: var(--ink); }
-.avg-foot { position: absolute; left: 0; right: 0; bottom: 14px; font-size: 14px; line-height: 18px; color: var(--muted); }
 .goal-card { margin-top: 12px; height: auto; }
 
 /* Mascot blink */
@@ -326,15 +305,10 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 
 /* Balance each day: Health-style chart with trailing axis, zero line, scrubbing and a header readout */
 .bal { position: relative; height: 270px; }
-.bal-title { position: absolute; left: 16px; top: 14px; font-size: 15px; line-height: 20px; color: var(--muted); letter-spacing: .2px; }
-.bal-head { position: absolute; left: 16px; right: 16px; top: 34px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.bal-head b { font-family: var(--display); font-size: 30px; line-height: 36px; font-weight: 800; letter-spacing: -.8px; color: var(--ink); font-variant-numeric: tabular-nums; }
-.bal-head small { font-size: 15px; font-weight: 600; color: #5c5f52; letter-spacing: 0; }
-.bal-head span { font-size: 14px; line-height: 18px; color: var(--muted); }
 .bal-plot { position: absolute; left: 12px; right: 52px; top: 84px; height: 132px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .bal-grid { position: absolute; left: 0; right: -40px; height: 1px; background: #ece9db; }
 .bal-grid.zero { background: #cfcbb9; }
-.bal-grid span { position: absolute; right: 0; top: -9px; width: 36px; text-align: right; font-size: 12px; line-height: 18px; color: var(--muted); font-variant-numeric: tabular-nums; background: var(--card); }
+.bal-grid span { position: absolute; right: 0; top: -9px; width: 36px; text-align: right; background: var(--card); }
 .bal-cols { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(7, 1fr); }
 .bal-col { position: relative; height: 100%; min-width: 44px; transition: opacity .15s ease; }
 .bal-col.dim { opacity: .4; }
@@ -345,8 +319,6 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .bal-ghost { position: absolute; left: 50%; width: 24px; height: 16px; margin-left: -12px; border: 1.5px dashed #b9bba9; border-radius: 6px; }
 .bal-rule { position: absolute; left: 50%; top: -6px; bottom: -6px; width: 1px; background: rgba(27,61,44,.3); }
 .bal-days { position: absolute; left: 12px; right: 52px; top: 226px; display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; }
-.bal-days span { font-size: 15px; line-height: 20px; color: var(--muted); }
-.bal-days span.now { color: var(--ink); font-weight: 700; }
 .bal-days span.sel { color: var(--green); font-weight: 700; }
 @keyframes grow { from { transform: scaleY(0); } }
 @media (prefers-reduced-motion: reduce) { .bal-bar { animation: none; } }
@@ -354,3 +326,36 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 /* Keyboard focus, visible and consistent */
 button:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
 .hero button:focus-visible, .seg button:focus-visible { outline-color: #fff; }
+
+/* Type system for cards: one title style, one headline style, one label style, one axis style */
+.c-title { font-size: 15px; line-height: 20px; font-weight: 600; letter-spacing: .2px; color: #5c5f52; text-align: left; }
+.c-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; text-align: left; }
+.c-head b { font-family: var(--display); font-size: 30px; line-height: 36px; font-weight: 800; letter-spacing: -.8px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.c-head small { font-size: 15px; font-weight: 600; color: #5c5f52; }
+.c-head span { font-size: 14px; line-height: 18px; font-weight: 400; color: var(--muted); }
+.lbl, .dl, .bal-days span, .sk-col span { font-size: 13px; line-height: 16px; font-weight: 600; letter-spacing: .4px; color: var(--muted); }
+.dl.now, .bal-days span.now, .sk-col.now span { color: var(--ink); font-weight: 700; }
+.axis, .gl, .ax, .bal-grid span { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.dl { position: absolute; left: 0; right: 0; top: 138px; text-align: center; }
+.bal-title { position: absolute; left: 16px; top: 14px; }
+.bal-head { position: absolute; left: 16px; right: 16px; top: 34px; }
+.bal-days { position: absolute; left: 12px; right: 52px; top: 226px; display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; }
+.bal-days span.sel { color: var(--green); font-weight: 700; }
+.sk-title { display: flex; align-items: baseline; justify-content: space-between; padding: 0 4px; }
+.sk-title em { display: inline-flex; align-items: center; gap: 2px; font-style: normal; font-size: 15px; line-height: 20px; color: var(--green); font-weight: 600; }
+.avg-title { position: absolute; left: 16px; top: 14px; }
+.avg-head { position: absolute; left: 16px; right: 16px; top: 34px; }
+.avg-tag { position: absolute; right: 14px; font-size: 12px; line-height: 20px; font-weight: 600; color: var(--ink); }
+.avg-foot { position: absolute; left: 16px; right: 16px; bottom: 14px; font-size: 14px; line-height: 18px; color: var(--muted); text-align: left; }
+.goal-card .c-head b { font-size: 26px; line-height: 32px; }
+.wchart { position: relative; height: 190px; margin-top: 14px; }
+.wplot { position: absolute; left: 0; right: 40px; top: 0; bottom: 0; }
+.gline { position: absolute; left: 0; right: 0; height: 1px; background: #e1ddcc; }
+.gl { position: absolute; right: -40px; width: 36px; text-align: right; }
+.wax { position: absolute; left: 0; right: 0; top: 171px; display: flex; justify-content: space-between; }
+.wdot { position: absolute; right: -5px; width: 10px; height: 10px; border-radius: 5px; background: var(--green); }
+
+.wcard { padding: 16px 16px 16px; margin-top: 12px; }
+.wcard .wchart { margin-top: 12px; }
+.wcard .legend { margin-top: 8px; }
