@@ -1,14 +1,28 @@
+import moon from './assets/cat/moon.webp';
+import meal from './assets/cat/meal.webp';
+import salad from './assets/cat/salad.webp';
+import mug from './assets/cat/mug.webp';
+import bottle from './assets/cat/bottle.webp';
+import drop from './assets/cat/drop.webp';
+import glass from './assets/cat/glass.webp';
+import dumbbell from './assets/cat/dumbbell.webp';
+import sneaker from './assets/cat/sneaker.webp';
+import footprints from './assets/cat/footprints.webp';
+
 export const summary = { deficit: '−2,256', resting: '2,308', eaten: '675', active: '623' };
 
-// Six categories. Each entry only names its category; icon, tint and label come from here.
-// Placeholder duotone icons until the custom set is ready.
+
+// Spare illustrations from the icon sheet, for sub-types later (salad, run, glass of water, bottle).
+export const SPARE_ICONS = { salad, sneaker, glass, bottle };
+
+// Six categories. Each entry only names its category; icon and label come from here.
 export const CATEGORIES = {
-  baseline: { label: 'Baseline', icon: 'moon-bold-duotone', tint: '#e8e5d3', color: '#5c5f52' },
-  food: { label: 'Food', icon: 'plate-bold-duotone', tint: '#dfebe2', color: '#1f724b' },
-  drink: { label: 'Drink', icon: 'bottle-bold-duotone', tint: '#dfebe2', color: '#1f724b' },
-  water: { label: 'Water', icon: 'waterdrop-bold-duotone', tint: '#dbeaf3', color: '#2a6f97' },
-  workout: { label: 'Workout', icon: 'dumbbell-large-minimalistic-bold-duotone', tint: '#fbe3e8', color: '#a3213f' },
-  steps: { label: 'Steps', icon: 'walking-round-bold-duotone', tint: '#fbe3e8', color: '#a3213f' },
+  baseline: { label: 'Baseline', icon: moon },
+  food: { label: 'Food', icon: meal },
+  drink: { label: 'Drink', icon: mug },
+  water: { label: 'Water', icon: drop },
+  workout: { label: 'Workout', icon: dumbbell },
+  steps: { label: 'Steps', icon: footprints },
 };
 
 export const entries = [
