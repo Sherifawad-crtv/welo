@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Sheet from './Sheet.jsx';
-import { Flame, SaverShield } from './Flame.jsx';
+import { Flame } from './Flame.jsx';
 import { Sol } from './Icons.jsx';
 import { streak } from '../data.js';
 
@@ -48,9 +48,6 @@ export default function StreakSheet({ onClose }) {
           </div>
         </div>
 
-        <div className="st-saver" aria-label={`${streak.savers} streak savers`}>
-          {Array.from({ length: streak.savers }, (_, i) => <SaverShield key={i} />)}
-        </div>
       </div>
     </Sheet>
   );

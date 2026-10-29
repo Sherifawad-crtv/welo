@@ -7,11 +7,3 @@ export const Flame = ({ size = 130 }) => (
     <path d="M40 98c6-5 14-5 20 0" fill="none" stroke="#2f8f62" strokeWidth="3" strokeLinecap="round" />
   </svg>
 );
-
-export const SaverShield = ({ size = 48 }) => (
-  <svg width={size} height={size * 1.1} viewBox="0 0 48 53" aria-hidden="true">
-    <path d="M24 2L44 6v22c0 10-8 18-20 23C12 46 4 38 4 28V6z" fill="#145a39" stroke="#5fbf8c" strokeWidth="4" strokeLinejoin="round" />
-    <path d="M24 14c6 5 9 10 8 15-1 4-4 7-8 7s-8-3-8-8c0-5 4-10 8-14z" fill="#b9e6cc" />
-    <path d="M26 28c3 0 5 2 5 4s-2 4-5 4" fill="none" stroke="#145a39" strokeWidth="2.5" strokeLinecap="round" />
-  </svg>
-);
