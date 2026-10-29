@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import mascot from '../assets/mascot-male.png';
+import Mascot from './Mascot.jsx';
 import { Sol } from './Icons.jsx';
 
 const MACRO = [
@@ -111,7 +111,7 @@ export default function EntrySheet({ detail, onClose, onDelete }) {
         </div>
 
         <div className="e-body">
-          <img className="e-mascot" src={mascot} alt="" />
+          <Mascot className="e-mascot" mood="happy" size={92} />
           <div className="e-total" aria-live="polite">
             <div className="e-kcal"><b>{totals.kcal}</b><span>kcal</span></div>
             <div className="e-mrow">

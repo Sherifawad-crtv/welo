@@ -1,4 +1,4 @@
-import mascot from '../assets/mascot-male.png';
+import Mascot from './Mascot.jsx';
 import { Chevron, InfoIcon, ProfileIcon, FakeStatusBar, Sol } from './Icons.jsx';
 
 export default function Hero({ summary, onProfile, onDate }) {
@@ -37,7 +37,7 @@ export default function Hero({ summary, onProfile, onDate }) {
 
         <div className="track" />
         <div className="goal-tick" />
-        <img className="mascot" src={mascot} alt="" />
+        <Mascot className="hero-mascot" mood="happy" size={34} />
         <div className="goal-text">Goal: land near a 500 deficit</div>
       </div>
     </header>

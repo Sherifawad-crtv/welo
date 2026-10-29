@@ -224,7 +224,7 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .s-icon { color: var(--green); }
 .circle { color: #fff; }
 
-.mascot { left: 20px; top: 242px; width: 34px; height: auto; }
+.hero-mascot { left: 20px; top: 242px; width: 34px; height: auto; }
 /* Bottom nav: three equal cells on one line. Padding 8, outer radius 37, inner radius 29. */
 .nav { position: fixed; left: 64px; right: 64px; bottom: var(--nav-bottom); height: 74px; padding: calc(var(--pad-nav) - 1px); border-radius: var(--r-nav); background: rgba(247,246,238,.32); -webkit-backdrop-filter: blur(8px) saturate(1.6); backdrop-filter: blur(8px) saturate(1.6); border: 1px solid rgba(255,255,255,.55); box-shadow: 0 8px 28px rgba(0,0,0,.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
 .nav-item { height: 100%; border-radius: var(--r-nav-item); display: grid; place-items: center; color: #b3b5aa; transition: background .2s, color .2s; }
@@ -309,10 +309,17 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .avg-num { position: absolute; left: 0; right: 0; top: 68px; font-size: 15px; line-height: 20px; color: #5c5f52; }
 .avg-num small { font-size: 15px; }
 .avg-grid { position: absolute; left: 14px; right: 14px; height: 1px; background: #ece9db; }
-.avg-pill { position: absolute; left: 5.5px; width: 40px; border-radius: 20px; opacity: .16; }
-.avg-face { position: absolute; left: 8.5px; line-height: 0; }
+.avg-pill { position: absolute; left: 3.5px; width: 44px; border-radius: 22px; opacity: .16; }
+.avg-face { position: absolute; left: 4.5px; line-height: 0; }
 .avg-solid { position: absolute; height: 2px; background: var(--ink); border-radius: 1px; }
 .avg-dash { position: absolute; height: 0; border-top: 2px dotted var(--ink); }
 .avg-tag { position: absolute; right: 14px; font-size: 14px; line-height: 20px; color: var(--ink); }
 .avg-foot { position: absolute; left: 0; right: 0; bottom: 14px; font-size: 14px; line-height: 18px; color: var(--muted); }
 .goal-card { margin-top: 12px; height: auto; }
+
+/* Mascot blink */
+.mascot-svg .m-eye { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
+.mascot-svg.blink .m-eye { animation: blink 5s infinite; }
+.mascot-svg:not(.blink) .m-eye { animation: none; }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+@media (prefers-reduced-motion: reduce) { .mascot-svg .m-eye { animation: none !important; } }

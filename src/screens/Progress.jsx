@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Chevron, FakeStatusBar, Sol } from '../components/Icons.jsx';
 import { Flame } from '../components/Flame.jsx';
+import Mascot from '../components/Mascot.jsx';
 import { weekDays, dayRows, weighGrid, weighAxis, weekByWeek, streak } from '../data.js';
 
 function Segmented({ value, onChange }) {
@@ -59,22 +60,11 @@ const GOAL = -500;
 const COL = 51;
 const PLOT_TOP = 104;
 const PLOT_H = 156;
-const DOT = 34;
+const DOT = 42;
 
 const toneOf = (v) => (v > 0 ? 'warn' : v <= GOAL ? 'good' : 'ok');
 const TONE = { good: '#1f724b', ok: '#c49a2c', warn: '#a3213f' };
-const MOUTH = { good: 'M10 21q7 6 14 0', ok: 'M11 22h12', warn: 'M10 24q7-6 14 0' };
-
-function Face({ tone }) {
-  return (
-    <svg width={DOT} height={DOT} viewBox="0 0 34 34" aria-hidden="true">
-      <circle cx="17" cy="17" r="17" fill={TONE[tone]} />
-      <circle cx="11.5" cy="14" r="3.6" fill="#fff" /><circle cx="22.5" cy="14" r="3.6" fill="#fff" />
-      <circle cx="12" cy="14.4" r="1.7" fill="#1b3d2c" /><circle cx="23" cy="14.4" r="1.7" fill="#1b3d2c" />
-      <path d={MOUTH[tone]} fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
-    </svg>
-  );
-}
+const MOOD = { good: 'happy', ok: 'ok', warn: 'sad' };
 
 function AvgChart() {
   const vals = counted.map((d) => d.v);
@@ -97,7 +87,7 @@ function AvgChart() {
           {d.v !== null && (
             <>
               <i className="avg-pill" style={{ top: yOf(d.v) - DOT / 2 - 3, height: PLOT_TOP + PLOT_H - yOf(d.v) + DOT / 2 + 3 - DOT / 2 + 6, background: TONE[toneOf(d.v)] }} />
-              <span className="avg-face" style={{ top: yOf(d.v) - DOT / 2 }}><Face tone={toneOf(d.v)} /></span>
+              <span className="avg-face" style={{ top: yOf(d.v) - DOT / 2 }}><Mascot mood={MOOD[toneOf(d.v)]} size={DOT} /></span>
             </>
           )}
           <div className={`dl${d.today ? ' now' : ''}`} style={{ top: PLOT_TOP + PLOT_H + 14 }}>{d.l}</div>
