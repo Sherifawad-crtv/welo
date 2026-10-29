@@ -22,14 +22,12 @@ export default function StreakSheet({ onClose }) {
   const move = (d) => setCursor(({ y, m }) => { const n = new Date(y, m + d, 1); return { y: n.getFullYear(), m: n.getMonth() }; });
 
   return (
-    <Sheet label="Streak" onClose={onClose}>
+    <Sheet label="Streak" onClose={onClose} fit>
       <div className="st-body">
         <div className="st-hero">
-          <div>
-            <div className="st-num">{streak.days}</div>
-            <div className="st-label">day streak!</div>
-          </div>
           <Flame />
+          <div className="st-num">{streak.days}</div>
+          <div className="st-label">day streak!</div>
         </div>
 
         <div className="st-cal">
@@ -50,10 +48,8 @@ export default function StreakSheet({ onClose }) {
           </div>
         </div>
 
-        <div className="st-saver">
-          <div className="st-saver-text"><b>Streak saver <em>×{streak.savers}</em></b><span>Automatically applies to save your streak</span></div>
-          <i />
-          <div className="st-shields">{Array.from({ length: streak.savers }, (_, i) => <SaverShield key={i} />)}</div>
+        <div className="st-saver" aria-label={`${streak.savers} streak savers`}>
+          {Array.from({ length: streak.savers }, (_, i) => <SaverShield key={i} />)}
         </div>
       </div>
     </Sheet>

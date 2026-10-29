@@ -5,7 +5,7 @@ const DISMISS_VELOCITY = 0.6; // px per ms
 
 // Generic iOS-style bottom sheet: grabber, drag to dismiss, tap outside or Esc to close.
 // Children may be a function receiving `dismiss` so content can close the sheet with the same animation.
-export default function Sheet({ label, onClose, children }) {
+export default function Sheet({ label, onClose, fit, children }) {
   const [dy, setDy] = useState(0);
   const [closing, setClosing] = useState(false);
   const drag = useRef(null);
@@ -56,7 +56,7 @@ export default function Sheet({ label, onClose, children }) {
 
   return (
     <div className="overlay" style={{ background: `rgba(0,20,10,${closing ? 0 : 0.28 * (1 - progress)})`, transition: closing ? 'background .26s ease' : undefined }} onClick={dismiss}>
-      <div className="esheet" ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-label={label} style={style} onClick={(e) => e.stopPropagation()}>
+      <div className={`esheet${fit ? ' fit' : ''}`} ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-label={label} style={style} onClick={(e) => e.stopPropagation()}>
         <div className="e-grab" onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}><i /><div className="grab-gap" /></div>
         {typeof children === 'function' ? children(dismiss) : children}
       </div>
