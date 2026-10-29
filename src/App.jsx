@@ -25,8 +25,8 @@ export default function App() {
             <>
               <Hero summary={summary} onProfile={() => setSettings(true)} />
               <div className="sheet">
-                <Entries entries={entries} details={entryDetails} onOpen={setEntryId} />
                 <Macros macros={macros} />
+                <Entries entries={entries} details={entryDetails} onOpen={setEntryId} />
               </div>
             </>
           ) : <Progress />}

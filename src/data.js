@@ -8,10 +8,10 @@ export const entries = [
 ];
 
 export const macros = [
-  { id: 'protein', label: 'Protein', value: '62g' },
-  { id: 'carbs', label: 'Carbs', value: '54g' },
-  { id: 'fat', label: 'Fat', value: '28g' },
-  { id: 'water', label: 'Water', value: '0.3/2.5L', water: true },
+  { id: 'protein', label: 'Protein', value: 62, goal: 150, unit: 'g', color: '#a3213f' },
+  { id: 'carbs', label: 'Carbs', value: 140, goal: 250, unit: 'g', color: '#1f724b' },
+  { id: 'fat', label: 'Fat', value: 38, goal: 70, unit: 'g', color: '#c49a2c' },
+  { id: 'water', label: 'Water', value: 1.2, goal: 2.5, unit: ' L', color: '#2a6f97' },
 ];
 
 export const weekDays = [

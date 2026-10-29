@@ -3,7 +3,7 @@ import { Sol } from './Icons.jsx';
 export default function Entries({ entries, details, onOpen }) {
   return (
     <section>
-      <h2 className="h2 first">Today's entries</h2>
+      <h2 className="h2">Today's entries</h2>
       {entries.map((e) => (
         <div className={`entry${details[e.id] ? ' tap' : ''}`} key={e.id} onClick={() => details[e.id] && onOpen(e.id)}>
           <div className="entry-icon" style={{ background: e.tint, color: e.color }}><Sol name={e.icon} size={26} /></div>
