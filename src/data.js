@@ -15,13 +15,13 @@ export const macros = [
 ];
 
 export const weekDays = [
-  { n: 'THU', l: 'T', v: -640, s: 'logged' },
-  { n: 'FRI', l: 'F', v: null },
-  { n: 'SAT', l: 'S', v: -520, s: 'streak' },
-  { n: 'SUN', l: 'S', v: 192, s: 'streak' },
-  { n: 'MON', l: 'M', v: -410, s: 'streak' },
-  { n: 'TUE', l: 'T', v: -380, s: 'streak' },
-  { n: 'WED', l: 'W', v: null, today: true, s: 'streak' },
+  { n: 'THU', full: 'Thursday', date: '22 Oct', l: 'T', v: -640, s: 'logged' },
+  { n: 'FRI', full: 'Friday', date: '23 Oct', l: 'F', v: null },
+  { n: 'SAT', full: 'Saturday', date: '24 Oct', l: 'S', v: -520, s: 'streak' },
+  { n: 'SUN', full: 'Sunday', date: '25 Oct', l: 'S', v: 192, s: 'streak' },
+  { n: 'MON', full: 'Monday', date: '26 Oct', l: 'M', v: -410, s: 'streak' },
+  { n: 'TUE', full: 'Tuesday', date: '27 Oct', l: 'T', v: -380, s: 'streak' },
+  { n: 'WED', full: 'Wednesday', date: '28 Oct', l: 'W', v: null, today: true, s: 'streak' },
 ];
 
 export const dayRows = [

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Chevron, FakeStatusBar, Sol } from '../components/Icons.jsx';
 import { Flame } from '../components/Flame.jsx';
 import Mascot from '../components/Mascot.jsx';
+import BalanceChart from '../components/BalanceChart.jsx';
+import { fmtSigned } from '../utils.js';
 import { weekDays, dayRows, weighGrid, weighAxis, weekByWeek, streak } from '../data.js';
 
 function Segmented({ value, onChange }) {
@@ -14,7 +16,6 @@ function Segmented({ value, onChange }) {
   );
 }
 
-const fmtSigned = (n) => `${n > 0 ? '+' : '−'}${Math.abs(n).toLocaleString('en-US')}`;
 const counted = weekDays.filter((d) => d.v !== null);
 const weekTotal = counted.reduce((t, d) => t + d.v, 0);
 const weekAvg = counted.length ? Math.round(weekTotal / counted.length) : 0;
@@ -105,16 +106,7 @@ function WeekBody({ onStreak }) {
   return (
     <>
       <StreakCard onOpen={onStreak} />
-      <div className="card chart-card">
-        <div className="card-title">Balance each day</div>
-        <div className="baseline" />
-        {weekDays.map((d, i) => (
-          <div className="col" key={i} style={{ left: 14.5 + i * 51 }}>
-            {d.v === null ? <div className="ghost" /> : <div className={`bar ${d.v > 0 ? 'up' : 'down'}`} style={{ height: Math.min(44, Math.max(8, Math.abs(d.v) * 0.07)) }} />}
-            <div className={`dl${d.today ? ' now' : ''}`}>{d.l}</div>
-          </div>
-        ))}
-      </div>
+      <BalanceChart days={weekDays} />
       <AvgChart />
       <div className="card stat-card goal-card"><div className="sc-label">Your goal</div><div className="sc-value">−500 a day</div></div>
       <h2 className="h2">Days</h2>
