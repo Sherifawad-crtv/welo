@@ -12,15 +12,15 @@ import footprints from './assets/cat/footprints.webp';
 export const summary = { deficit: '−2,256', resting: '2,308', eaten: '675', active: '623' };
 
 
-// Spare illustrations from the icon sheet, for sub-types later (salad, run, glass of water, tea mug).
-export const SPARE_ICONS = { salad, sneaker, glass, mug };
+// Spare illustrations from the icon sheet, for sub-types later (salad, run, glass of water, bottle).
+export const SPARE_ICONS = { salad, sneaker, glass, bottle };
 
 // Six categories. Each entry only names its category; icon and label come from here.
 // scale: optical size tweak so narrow artwork matches the square ones.
 export const CATEGORIES = {
   baseline: { label: 'Baseline', icon: moon, scale: 1.2 },
   food: { label: 'Food', icon: meal },
-  drink: { label: 'Drink', icon: bottle, scale: 1.2 },
+  drink: { label: 'Drink', icon: mug, scale: 1.2 },
   water: { label: 'Water', icon: drop },
   workout: { label: 'Workout', icon: dumbbell },
   steps: { label: 'Steps', icon: footprints, scale: 1.2 },
