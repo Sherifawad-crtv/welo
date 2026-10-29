@@ -359,3 +359,14 @@ button:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
 .wcard { padding: 16px 16px 16px; margin-top: 12px; }
 .wcard .wchart { margin-top: 12px; }
 .wcard .legend { margin-top: 8px; }
+
+/* Streak flame: pops in, then flickers gently */
+.flame-live { transform-origin: 50% 90%; animation: flame-pop .6s cubic-bezier(.2,.9,.3,1.3) both, flame-flicker 2.6s ease-in-out .6s infinite; will-change: transform; }
+@keyframes flame-pop { from { transform: scale(.6) translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes flame-flicker {
+  0%, 100% { transform: scale(1, 1) rotate(0deg); }
+  25% { transform: scale(.985, 1.035) rotate(-1.6deg); }
+  50% { transform: scale(1.015, .985) rotate(.8deg); }
+  75% { transform: scale(.99, 1.025) rotate(1.6deg); }
+}
+@media (prefers-reduced-motion: reduce) { .flame-live { animation: none; } }

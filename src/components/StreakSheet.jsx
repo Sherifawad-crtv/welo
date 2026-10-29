@@ -25,7 +25,7 @@ export default function StreakSheet({ onClose }) {
     <Sheet label="Streak" onClose={onClose} fit>
       <div className="st-body">
         <div className="st-hero">
-          <Flame />
+          <Flame className="flame-live" />
           <div className="st-num">{streak.days}</div>
           <div className="st-label">day streak!</div>
         </div>
