@@ -300,3 +300,19 @@ button { font: inherit; color: inherit; border: 0; padding: 0; background: none;
 .sk-col span { font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: .6px; color: var(--muted); }
 .sk-col.now span { color: var(--ink); }
 .sk-empty { width: 38px; height: 38px; margin: 1px 0; border-radius: 19px; border: 2px dashed #c3c5b8; }
+
+/* Average each day: dots vs the average line, with the typical swing as a band */
+.avg-card { position: relative; height: 206px; margin-top: 12px; }
+.avg-card .col { position: absolute; top: 0; width: 51px; height: 100%; }
+.avg-title { position: absolute; left: 16px; top: 14px; font-size: 16px; line-height: 20px; color: #5c5f52; letter-spacing: .3px; }
+.avg-val { position: absolute; right: 16px; top: 10px; font-family: var(--display); font-size: 26px; line-height: 30px; font-weight: 800; color: var(--ink); letter-spacing: -.5px; }
+.avg-val small { font-size: 14px; font-weight: 600; color: #5c5f52; letter-spacing: 0; }
+.avg-sub { position: absolute; left: 16px; top: 34px; font-size: 14px; line-height: 18px; color: var(--muted); }
+.avg-band { position: absolute; left: 14px; right: 14px; border-radius: 8px; background: rgba(31,114,75,.09); }
+.avg-line { position: absolute; left: 14px; right: 14px; height: 2px; border-radius: 1px; background: var(--green); }
+.avg-goal { position: absolute; left: 14px; right: 14px; border-top: 1.5px dashed #c49a2c; }
+.avg-goal span { position: absolute; right: 0; top: 3px; font-size: 12px; line-height: 14px; color: #8a6a14; }
+.avg-stem { position: absolute; left: 24px; width: 3px; border-radius: 2px; opacity: .45; }
+.avg-dot { position: absolute; left: 18.5px; width: 14px; height: 14px; border-radius: 7px; }
+.avg-ghost { position: absolute; left: 19.5px; width: 12px; height: 12px; border-radius: 6px; border: 1.5px dashed #b9bba9; background: var(--card); }
+.goal-card { margin-top: 12px; height: auto; }

@@ -55,6 +55,44 @@ function StreakCard({ onOpen }) {
   );
 }
 
+const GOAL = -500;
+const COL = 51;
+const PLOT_TOP = 62;
+const PLOT_H = 100;
+
+function AvgChart() {
+  const vals = counted.map((d) => d.v);
+  const devs = vals.map((v) => v - weekAvg);
+  const up = Math.max(0, ...devs);
+  const down = Math.max(0, ...devs.map((d) => -d));
+  const k = PLOT_H / Math.max(1, up + down); // px per kcal
+  const lineY = PLOT_TOP + up * k;
+  const sd = Math.round(Math.sqrt(devs.reduce((t, d) => t + d * d, 0) / Math.max(1, devs.length)));
+  const yOf = (v) => lineY - (v - weekAvg) * k;
+  const tone = (v) => (v > 0 ? '#a3213f' : v <= GOAL ? '#1f724b' : '#c49a2c');
+  return (
+    <div className="card avg-card" role="img" aria-label={`Average ${fmtSigned(weekAvg)} kcal a day, typical swing plus or minus ${sd}`}>
+      <div className="avg-title">Average each day</div>
+      <div className="avg-val">{fmtSigned(weekAvg)}<small> kcal</small></div>
+      <div className="avg-sub">Typical swing ±{sd} kcal</div>
+      <div className="avg-band" style={{ top: lineY - sd * k, height: 2 * sd * k }} />
+      <div className="avg-line" style={{ top: lineY - 1 }} />
+      <div className="avg-goal" style={{ top: yOf(GOAL) }}><span>Goal {fmtSigned(GOAL)}</span></div>
+      {weekDays.map((d, i) => (
+        <div className="col" key={i} style={{ left: 14.5 + i * COL }}>
+          {d.v === null ? <i className="avg-ghost" style={{ top: lineY - 6 }} /> : (
+            <>
+              <i className="avg-stem" style={{ top: Math.min(lineY, yOf(d.v)), height: Math.abs(yOf(d.v) - lineY), background: tone(d.v) }} />
+              <i className="avg-dot" style={{ top: yOf(d.v) - 7, background: tone(d.v) }} />
+            </>
+          )}
+          <div className={`dl${d.today ? ' now' : ''}`} style={{ top: 178 }}>{d.l}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function WeekBody({ onStreak }) {
   return (
     <>
@@ -69,10 +107,8 @@ function WeekBody({ onStreak }) {
           </div>
         ))}
       </div>
-      <div className="two">
-        <div className="card stat-card"><div className="sc-label">Average a day</div><div className="sc-value">{fmtSigned(weekAvg)}</div></div>
-        <div className="card stat-card"><div className="sc-label">Your goal</div><div className="sc-value">−500 a day</div></div>
-      </div>
+      <AvgChart />
+      <div className="card stat-card goal-card"><div className="sc-label">Your goal</div><div className="sc-value">−500 a day</div></div>
       <h2 className="h2">Days</h2>
       {dayRows.map((r) => (
         <div className="entry" key={r.d}>
