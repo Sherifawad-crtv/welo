@@ -37,7 +37,7 @@ function WeightHero() {
 function StreakCard({ onOpen }) {
   return (
     <button className="card streak-card" onClick={onOpen} aria-haspopup="dialog" aria-label={`This week, ${streak.days} day streak. Open calendar`}>
-      <div className="sk-title"><span>This week</span><em>{streak.days} day streak</em></div>
+      <div className="sk-title"><span>This week</span><em>{streak.days} day streak<Sol name="alt-arrow-right-linear" size={16} /></em></div>
       <div className="sk-week">
         {weekDays.map((d, i) => (
           <div key={i} className={`sk-col${d.today ? ' now' : ''}`}>
